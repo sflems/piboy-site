@@ -1,26 +1,26 @@
 {% extends 'base-react.html' %}
 
 {% block head %}
-    <title>Django react app</title>
+
+<title>Django react app</title>
 
     {{ sharedData|json_script:"sharedData" }}
 
 {% endblock head %}
 
 <style>
-{% block css %}
-    .wrapper{text-align:center;}
-{% endblock css %}
+    {% block css %}
+        .wrapper{text-align:center;}
+    {% endblock css %}
 </style>
 
-{% block body %}
+{% block body %} {% block main %}
+<div class="wrapper">
+    <h1>This is django</h1>
+</div>
 
-    {% block main %}
-        <div class="wrapper">
-            <h1>This is django</h1>
-        </div>
-    {% endblock main %}
+{% endblock main %}
 
-    {{ block.super }}
+{{ block.super }}
 
 {% endblock body %}
