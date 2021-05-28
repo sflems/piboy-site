@@ -1,8 +1,11 @@
 from .base import *
+from secret_key_generator import secret_key_generator
 
-SECRET_KEY = 'my-secret-key-goes-here'
+SECRET_KEY = secret_key_generator.generate()
 
 CORS_ORIGIN = 'http://localhost:3000'
+
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000']
 
 DEBUG = True
 
