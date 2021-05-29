@@ -7,6 +7,9 @@ CORS_ORIGIN = 'http://localhost:3000'
 
 CORS_ALLOWED_ORIGINS = ['http://localhost:3000']
 
+# May be needed for CSRF cookies
+# CORS_ALLOW_CREDENTIALS = True
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
