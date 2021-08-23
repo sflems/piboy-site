@@ -10,7 +10,8 @@ class IndexView(TemplateView):
         #  This is data we want to share with react
         context['sharedData'] = {
             'first_name': 'Scott',
-            'message': 'Welcome to my Django/RxJS web app.'
+            'site_name': 'Piboy Technical Solutions',
+            'message': 'Welcome to piboy.ca!'
         }
 
         return context

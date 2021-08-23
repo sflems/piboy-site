@@ -16,18 +16,17 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <p>Hello!</p>
-                <Firstname {...sharedData} />
+                <Greeting {...sharedData} />
                 <Message {...sharedData} />
             </header>
         </div>
     );
 }
 
-const Firstname = ({ first_name }) => {
+const Greeting = ({ first_name, site_name }) => {
     if (!first_name) return <div>Loading ....</div>;
 
-    return <div>I am {first_name}</div>;
+    return <div>My name is {first_name}. I am a freelance developer and web designer, and the founder of <a href="/" class="App-link">{site_name}</a></div>;
 };
 
 const Message = ({ isLoaded, message }) => {
