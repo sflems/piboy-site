@@ -3,35 +3,52 @@ import { getSharedData } from "./utils";
 
 import "./App.css";
 
+const MEDIA_URL = "/media/"
+
 function App() {
-    const [sharedData, setSharedData] = useState({ isLoaded: false });
+    const [sharedData, setSharedData] = useState({ isLoaded: false, mediaURL: MEDIA_URL });
+    var d = new Date()
 
     useEffect(() => {
         getSharedData().then((data) => {
             console.log(data);
-            setSharedData({ ...data, isLoaded: true });
+            setSharedData({ ...data, isLoaded: true, mediaURL: MEDIA_URL });
         });
     }, []);
 
     return (
-        <div className="App">
-            <header className="App-header">
-                <Greeting {...sharedData} />
-                <Message {...sharedData} />
+        <>
+            <header className="mb-auto" >
             </header>
-        </div>
+            <main className="px-3 mb-5">
+                <Logo {...sharedData} />
+                <Message {...sharedData} />                
+                <Greeting {...sharedData} />
+            </main>
+            <footer class="mt-auto text-white-50">
+                <p>Copyright &copy; {d.getFullYear()} {sharedData.site_name}. All rights reserved.</p>
+            </footer>
+        </>
+
     );
 }
 
-const Greeting = ({ first_name, site_name }) => {
-    if (!first_name) return <div>Loading ....</div>;
-
-    return <div>My name is {first_name}. I am a freelance developer and web designer, and the founder of <a href="/" class="App-link">{site_name}</a></div>;
+const Logo = ({ mediaURL }) => {
+    let logo_src = mediaURL + "logo.svg"
+    return <img src={logo_src} alt="Piboy Splash Logo" className="Splash-logo" ></img>
 };
 
 const Message = ({ isLoaded, message }) => {
     if (!isLoaded) return null;
-    return <div>{message}</div>;
+    return <div className="h4">{message}</div>;
+};
+
+const Greeting = ({ first_name, site_name }) => {
+    if (!first_name || !site_name) return <div>Loading ....</div>;
+    return <div className="lead">
+                My name is {first_name}. I'm a freelance web developer, and founder of <br/>
+                <a href="/" className="link-info">{site_name}</a>
+           </div>;
 };
 
 export default App;

@@ -11,7 +11,7 @@ class IndexView(TemplateView):
         context['sharedData'] = {
             'first_name': 'Scott',
             'site_name': 'Piboy Technical Solutions',
-            'message': 'Welcome to piboy.ca!'
+            'message': 'Welcome to piboy.ca!',
         }
 
         return context

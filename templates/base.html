@@ -2,25 +2,35 @@
 
 {% block head %}
 
-<title>Django react app</title>
+    <title>Piboy Technical Solutions | Piboy.ca</title>
+    <meta
+      name="description"
+      content="Developing simple solutions to life's technical problems."
+    />
+    <link rel="icon" href="{{ MEDIA_URL }}favicon.ico" />
+    <link rel="apple-touch-icon" href="{{ MEDIA_URL }}logo192.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+
+    {% comment %} <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    {% endcomment %}
+
+    <link rel="manifest" href="{{ STATIC_URL }}manifest.json" />
 
     {{ sharedData|json_script:"sharedData" }}
 
 {% endblock head %}
 
-<style>
-    {% block css %}
-        .wrapper{text-align:center;}
-    {% endblock css %}
-</style>
-
 {% block body %} {% block main %}
-<div class="wrapper">
-    <h1>This is django</h1>
-</div>
 
 {% endblock main %}
 
 {{ block.super }}
 
 {% endblock body %}
+
+{% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+{% endblock scripts %}
