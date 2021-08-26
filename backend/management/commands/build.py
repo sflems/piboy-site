@@ -36,11 +36,21 @@ class Command(BaseCommand):
         try:
             static_target = str(settings.BASE_DIR) + settings.STATIC_URL
             build_target = str(client_dir) + "/build/"
-            callOne = f'cp {build_target}' + "manifest.json " + static_target
-            callTwo = f'cp {build_target}' + "robots.txt " + static_target
+            callOne = f'cp {build_target}manifest.json {static_target}'
+            callTwo = f'cp {build_target}robots.txt {static_target}'
             
             subprocess.check_call([callOne], shell=True)
             subprocess.check_call([callTwo], shell=True)
+        except Exception as e:
+            self.stdout.write(self.style.ERROR(str(e)))
+
+        self.stdout.write('Copying media to media dir ...')
+        try:
+            media_dir = str(settings.BASE_DIR) + settings.MEDIA_URL
+            media_target = str(client_dir) + "/src/media/"
+            callThree = f'cp {media_target}* {media_dir}'
+            
+            subprocess.check_call([callThree], shell=True)
         except Exception as e:
             self.stdout.write(self.style.ERROR(str(e)))
 
