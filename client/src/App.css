@@ -2,3 +2,43 @@
   max-height: 33vh;
   min-width: 256px;
 }
+
+.blue {
+  background: #277da1 !important;
+}
+
+.teal {
+  background: #38ab8b !important;
+}
+
+.yellow {
+  background: #fac751 !important;
+}
+
+.green {
+  background: #98cd67 !important;
+}
+
+.orange {
+  background: #f3733c !important;
+}
+
+/* SVG background image via https://haikei.app/ */
+.spacer {
+  aspect-ratio: 900/300;
+  width: 100% !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.layer1 {
+  background-image: url("./media/layer1.svg");
+}
+.layer2 {
+  background-image: url("./media/layer2.svg");
+}
+
+.flip {
+  transform: rotate(180deg);
+}

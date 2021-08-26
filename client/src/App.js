@@ -18,13 +18,15 @@ function App() {
 
     return (
         <>
-            <header className="mb-auto" >
+            <header className="mb-n5 p-0 h-0">
             </header>
-            <main className="px-3 mb-5">
+            <Spacer1 />
+            <main className="px-3 blue">
                 <Logo {...sharedData} />
                 <Message {...sharedData} />                
                 <Greeting {...sharedData} />
             </main>
+            <Spacer2 />
             <footer class="mt-auto text-white-50">
                 <p>Copyright &copy; {d.getFullYear()} {sharedData.site_name}. All rights reserved.</p>
             </footer>
@@ -50,5 +52,13 @@ const Greeting = ({ first_name, site_name }) => {
                 <a href="/" className="link-info">{site_name}</a>
            </div>;
 };
+
+const Spacer1 = () => {
+    return <div className="spacer layer1"></div>;
+}
+
+const Spacer2 = () => {
+    return <div className="spacer layer2"></div>;
+}
 
 export default App;
