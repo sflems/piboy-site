@@ -18,10 +18,9 @@ function App() {
 
     return (
         <>
-            <header className="mb-n5 p-0 h-0">
+            <header className="layer1 spacer">
             </header>
-            <Spacer1 />
-            <main className="px-3 blue">
+            <main className="px-3 m-0 blue">
                 <Logo {...sharedData} />
                 <Message {...sharedData} />                
                 <Greeting {...sharedData} />
@@ -58,7 +57,7 @@ const Spacer1 = () => {
 }
 
 const Spacer2 = () => {
-    return <div className="spacer layer2"></div>;
+    return <div className="spacer layer2 flip"></div>;
 }
 
 export default App;

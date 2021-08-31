@@ -12,7 +12,7 @@
 /build
 
 # not media
-!./src/media
+!/src/media
 
 # misc
 .DS_Store
