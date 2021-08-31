@@ -11,6 +11,9 @@
 # production
 /build
 
+# not media
+!./src/media
+
 # misc
 .DS_Store
 .env.local
