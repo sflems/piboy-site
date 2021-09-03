@@ -44,16 +44,6 @@ class Command(BaseCommand):
         except Exception as e:
             self.stdout.write(self.style.ERROR(str(e)))
 
-        self.stdout.write('Copying media to media dir ...')
-        try:
-            media_dir = str(settings.BASE_DIR) + settings.MEDIA_URL
-            media_target = str(client_dir) + "/src/media/"
-            callThree = f'cp {media_target}* {media_dir}'
-            
-            subprocess.check_call([callThree], shell=True)
-        except Exception as e:
-            self.stdout.write(self.style.ERROR(str(e)))
-
         exists = os.path.exists(index_path)
         if not exists:
             # print or raise error

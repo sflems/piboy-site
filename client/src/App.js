@@ -2,17 +2,16 @@ import { useEffect, useState } from "react";
 import { getSharedData } from "./utils";
 
 import "./App.css";
-
-const MEDIA_URL = "/media/"
+import logo from "./media/logo.svg"
 
 function App() {
-    const [sharedData, setSharedData] = useState({ isLoaded: false, mediaURL: MEDIA_URL });
+    const [sharedData, setSharedData] = useState({ isLoaded: false });
     var d = new Date()
 
     useEffect(() => {
         getSharedData().then((data) => {
             console.log(data);
-            setSharedData({ ...data, isLoaded: true, mediaURL: MEDIA_URL });
+            setSharedData({ ...data, isLoaded: true});
         });
     }, []);
 
@@ -26,7 +25,7 @@ function App() {
                 <Greeting {...sharedData} />
             </main>
             <Spacer2 />
-            <footer class="mt-auto text-white-50">
+            <footer className="mt-auto text-white-50">
                 <p>Copyright &copy; {d.getFullYear()} {sharedData.site_name}. All rights reserved.</p>
             </footer>
         </>
@@ -34,9 +33,8 @@ function App() {
     );
 }
 
-const Logo = ({ mediaURL }) => {
-    let logo_src = mediaURL + "logo.svg"
-    return <img src={logo_src} alt="Piboy Splash Logo" className="Splash-logo" ></img>
+const Logo = () => {
+    return <img src={logo} alt="Piboy Splash Logo" className="Splash-logo" ></img>
 };
 
 const Message = ({ isLoaded, message }) => {
