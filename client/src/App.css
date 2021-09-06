@@ -1,6 +1,5 @@
 .Splash-logo {
   max-height: 33vh;
-  min-width: 256px;
 }
 
 .blue {
@@ -27,16 +26,21 @@
 .spacer {
   aspect-ratio: 900/200;
   width: 100% !important;
+  height: auto;
+  max-height: 200px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .layer1 {
-  background-image: url("./media/layer1.svg");
+  width: 100%;
+  height: 100%;
 }
+
 .layer2 {
-  background-image: url("./media/layer2.svg");
+  width: 100%;
+  height: 100%;
 }
 
 .flip {

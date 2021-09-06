@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const IS_DEV = process.env.NODE_ENV !== "production";
 
-export const DOMAIN = IS_DEV ? `http://10.0.0.176:9006` : `${window.location.origin}`;
+export const DOMAIN = IS_DEV ? `http://192.168.1.159:9006` : `${window.location.origin}`;
 
 export const getSharedData = () =>
     new Promise(async (resolve, reject) => {
