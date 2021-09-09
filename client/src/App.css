@@ -1,5 +1,6 @@
-.Splash-logo {
-  max-height: 33vh;
+#NavLogo {
+  width: 56px;
+  height: 56px;
 }
 
 .blue {
@@ -20,6 +21,10 @@
 
 .orange {
   background: #f3733c !important;
+}
+
+.lead {
+  padding-bottom: 3em;
 }
 
 /* SVG background image via https://haikei.app/ */

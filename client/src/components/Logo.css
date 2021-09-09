@@ -1,0 +1,35 @@
+div.logo {
+  position: relative;
+  overflow: hidden;
+}
+
+.rotate {
+  animation: rotate 10s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Splash-logo {
+  height: 256px;
+  width: 256px;
+  position: absolute;
+  top: calc(50% - 96px);
+  left: calc(50% - 128px);
+  display: block;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+svg.blob {
+  display: block;
+  overflow: visible;
+  margin: 0 auto !important;
+}
+
+svg g path#blob2 {
+  visibility: hidden;
+}
