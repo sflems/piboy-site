@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { getSharedData } from "./utils";
 
 import "./App.css";
+import Main from "./components/Main.js";
 import NavBar from "./components/NavBar.js";
-import Logo from "./components/Logo.js";
 import Layer1SVG from "./media/layer1.svg";
 import Layer2SVG from "./media/layer2.svg";
 
@@ -20,16 +20,13 @@ function App() {
 
   return (
     <div id="page-container" className="m-0">
-      <NavBar id="NavBar"/>
-      <Spacer1 id="spacer1" />
-      <main id="main" className="row blue m-0 pb-2">
-        <div className="col">
-            <Logo />
-            <Message {...sharedData} />
-            <Greeting {...sharedData} />
-        </div> 
-      </main>
-      <Spacer2 id="spacer2" />
+      <NavBar />
+      <Spacer1 spacerId="1" />
+      <Main id="main" {...sharedData} />
+      <Spacer2 spacerId="2" />
+      <Spacer1 spacerId="3" />
+      <Main id="main2" {...sharedData} />
+      <Spacer2 spacerId="4" />
       <footer id="footer" className="row m-0 mt-auto text-white-50 p-3">
         <p className="col">
           Copyright &copy; {d.getFullYear()} {sharedData.site_name}.<br /> All
@@ -40,46 +37,19 @@ function App() {
   );
 }
 
-const Message = ({ isLoaded, message }) => {
-  if (!isLoaded) return null;
+const Spacer1 = (props) => {
   return (
-    <div id="message" className="row m-0">
-      <p className="col h4">{message}</p>
+    <div id={props.id} className="row mx-0 my-n3">
+        <img id={"spacerImg" + props.spacerId} src={Layer1SVG} className="col p-0 mt-md-n5 layer1" alt="Wave spacer effect."/>
     </div>
   );
 };
 
-const Greeting = ({ first_name, site_name }) => {
-  if (!first_name || !site_name) return <div>Loading ....</div>;
+const Spacer2 = (props) => {
   return (
-    <div id="greeting" className="row m-0">
-      <p className="col lead">
-        My name is {first_name}. I'm a freelance web developer, and founder of{" "}
-        <br />
-        <a href="/" className="link-info">
-          {site_name}
-        </a>
-      </p>
+    <div className="row mx-0 my-n5 flip">
+        <img id={"spacer" + props.SpacerId} src={Layer2SVG} className="col p-0 layer2" alt="Wave spacer effect #2."/>
     </div>
-  );
-};
-
-// eslint-disable-next-line no-unused-vars
-const Spacer1 = () => {
-  return (
-    <div
-      className="row spacer layer1 mx-0 mt-n5 mt-lg-n2 mb-n2"
-      style={{ backgroundImage: `url(${Layer1SVG})` }}
-    ></div>
-  );
-};
-
-const Spacer2 = () => {
-  return (
-    <div
-      className="row spacer layer2 flip mx-0 mb-n5"
-      style={{ backgroundImage: `url(${Layer2SVG})` }}
-    ></div>
   );
 };
 

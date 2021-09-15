@@ -20,18 +20,18 @@ const Logo = () => {
       blob1Ref.current,
       { path: blob1Ref.current },
       { path: blob2Ref.current },
-      { transformOrigin: [OriginX, OriginY],  morphPrecision: 3, repeat: Infinity, duration: 3000, yoyo: true },
+      { morphPrecision: 3, repeat: Infinity, duration: 3000, yoyo: true },
     );
     tween.start();
   }, []);
 
 
   return (
-    <div className="logo row mx-0 my-n5">
-      <div className="container-fluid d-flex justify-content-center align-middle">
+    <div className="logo col mx-0 my-n5 my-md-n2">
+      <div className="row m-0 p-0 pb-3 container-fluid d-flex justify-content-center align-middle">
         <img
           src={LogoPNG}
-          className="m-0 Splash-logo mx-auto my-sm-n5"
+          className="m-0 Splash-logo mx-auto pt-4"
           alt="Piboy Splash Logo"
         ></img>
         <svg
@@ -43,7 +43,7 @@ const Logo = () => {
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
         >
-          <g transform="translate(225 225)">
+          <g transform="translate(225 225), scale(0.8)">
             <path
               id="blob1"
               ref={blob1Ref}
@@ -54,7 +54,7 @@ const Logo = () => {
               id="blob2"
               ref={blob2Ref}
               d="M114.5 -158.1C140.8 -138.5 149.3 -94.9 158.5 -54.4C167.7 -13.9 177.5 23.5 159.5 43.4C141.4 63.3 95.5 65.8 64.3 72C33.1 78.2 16.5 88.1 -7.5 98.4C-31.5 108.8 -63.1 119.5 -85.1 110.3C-107.2 101.2 -119.7 72.1 -118.6 45.6C-117.6 19.1 -103 -4.8 -89.7 -24C-76.4 -43.2 -64.4 -57.6 -49.6 -81C-34.9 -104.3 -17.4 -136.7 13.3 -155C44.1 -173.3 88.2 -177.7 114.5 -158.1"
-              fill="#212121"
+              fill="#2f4f4f"
             ></path>
           </g>
         </svg>

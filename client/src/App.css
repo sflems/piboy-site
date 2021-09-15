@@ -1,6 +1,31 @@
+html {
+  scroll-behavior: smooth;
+}
+
 #NavLogo {
   width: 56px;
   height: 56px;
+}
+
+#NavBar {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  overflow-x: clip;
+}
+
+@media (min-width: 992px) {
+  #main2 {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@media (max-width: 991px){
+  #main2 {
+    scroll-margin-top: 1rem !important;
+  }
 }
 
 .blue {
@@ -27,23 +52,7 @@
   padding-bottom: 3em;
 }
 
-/* SVG background image via https://haikei.app/ */
-.spacer {
-  aspect-ratio: 900/200;
-  width: 100% !important;
-  height: auto;
-  max-height: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.layer1 {
-  width: 100%;
-  height: 100%;
-}
-
-.layer2 {
+.SVGlayer {
   width: 100%;
   height: 100%;
 }

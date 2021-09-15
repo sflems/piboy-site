@@ -1,15 +1,16 @@
 div.logo {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .rotate {
-  animation: rotate 10s ease-in-out infinite;
+  animation: rotate 7s ease-in-out infinite reverse;
+  animation-direction: alternate;
 }
 
 @keyframes rotate {
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(1.5);
   }
 }
 
@@ -17,7 +18,7 @@ div.logo {
   height: 256px;
   width: 256px;
   position: absolute;
-  top: calc(50% - 96px);
+  top: calc(50% - 128px);
   left: calc(50% - 128px);
   display: block;
   margin: 0 auto;
