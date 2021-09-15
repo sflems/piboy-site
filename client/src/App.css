@@ -18,13 +18,13 @@ main {
 
 @media (min-width: 992px) {
   #main2 {
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 5rem;
   }
 }
 
 @media (max-width: 991px){
   #main2 {
-    scroll-margin-top: 1rem !important;
+    scroll-margin-top: 0rem !important;
   }
 }
 

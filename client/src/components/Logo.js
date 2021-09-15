@@ -28,7 +28,7 @@ const Logo = () => {
 
   return (
     <div className="logo col mx-0 my-n5 my-md-n2">
-      <div className="row m-0 p-0 pb-3 container-fluid d-flex justify-content-center align-middle">
+      <div className="row m-0 p-0 pb-md-3 container-fluid d-flex justify-content-center align-middle">
         <img
           src={LogoPNG}
           className="m-0 Splash-logo mx-auto pt-4"

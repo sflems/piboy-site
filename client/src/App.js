@@ -39,7 +39,7 @@ function App() {
 
 const Spacer1 = (props) => {
   return (
-    <div id={props.id} className="row mx-0 my-n3">
+    <div id={props.id} className="row mx-0 my-n2">
         <img id={"spacerImg" + props.spacerId} src={Layer1SVG} className="col p-0 mt-md-n5 layer1" alt="Wave spacer effect."/>
     </div>
   );
@@ -47,7 +47,7 @@ const Spacer1 = (props) => {
 
 const Spacer2 = (props) => {
   return (
-    <div className="row mx-0 my-n5 flip">
+    <div className="row mx-0 my-n3 flip">
         <img id={"spacer" + props.SpacerId} src={Layer2SVG} className="col p-0 layer2" alt="Wave spacer effect #2."/>
     </div>
   );

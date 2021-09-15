@@ -15,7 +15,7 @@ const Main = (props) => {
 const Message = ({ isLoaded, message }) => {
     if (!isLoaded) return null;
     return (
-      <div id="message" className="row m-0 pt-4">
+      <div id="message" className="row m-0 pt-md-4">
         <p className="h4">{message}</p>
       </div>
     );
