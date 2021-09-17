@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef} from "react";
+import { useLayoutEffect, useRef } from "react";
 import KUTE from "kute.js";
 
 import "./Spacer.css";
@@ -37,9 +37,9 @@ const Spacer = (props) => {
   
 
   return (
-    <div id={"spacer"+props.spacerId} className={"row my-n2 p-0 "+ (props.className ? props.className : "")} >
+    <div id={"spacer"+props.spacerId} className={"spacer row my-md-n4 mx-0 p-0 "+ (props.className ? props.className : "") + (props.flip ? " flip" : "")} >
       <svg
-        className="waves"
+        className="waves mt-md-n4 "
         viewBox="0 0 900 200"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"

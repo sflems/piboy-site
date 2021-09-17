@@ -3,11 +3,7 @@
   }
 
 .spacer {
-    overflow-x: clip;
-}
-
-.navSpacer {
-    overflow-x: clip;
+    overflow: clip;
 }
   
 .waves {
