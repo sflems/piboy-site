@@ -1,0 +1,18 @@
+.flip {
+    transform: rotate(180deg);
+  }
+
+.spacer {
+    overflow-x: clip;
+}
+
+.navSpacer {
+    overflow-x: clip;
+}
+  
+.waves {
+    width: 105%;
+    height: 100%;
+    padding: 0 !important;
+    scale: 1.04;
+  }

@@ -1,10 +1,11 @@
-import Logo from "./Logo"
+import Logo from "./Logo";
+import "./Main.css";
 
 const Main = (props) => {
     return (
-        <main id={props.id} className="row row-cols-1 row-cols-md-2 blue m-0">
+        <main id={props.id} className="row row-cols-1 row-cols-md-2 bg-primary m-0">
             <Logo />
-            <div className="col mx-0 my-auto pt-4">
+            <div className="col mx-0 my-auto pt-2 pt-md-4">
                 <Message {...props} />
                 <Greeting {...props} />
             </div>
@@ -28,7 +29,7 @@ const Message = ({ isLoaded, message }) => {
         <p className="lead">
           My name is {first_name}. I'm a freelance web developer, and founder of{" "}
           <br />
-          <a href="/" className="link-info">
+          <a href="/" className="link-success">
             {site_name}
           </a>
         </p>
