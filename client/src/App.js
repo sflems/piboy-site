@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Element } from "react-scroll";
+import { Route, Switch } from "react-router-dom";
 
 import AboutMe from "./components/AboutMe.js";
 import Main from "./components/Main.js";
@@ -13,11 +14,15 @@ function App() {
     <Element name="home" id="home" className="home m-0">
       <NavBar />
       <Spacer spacerId="0" />
-      <Main id="main" />
+      <Switch>
+        <Route path="/about">
+          <AboutMe />
+        </Route>
+        <Route path="/">
+          <Main />
+        </Route>
+      </Switch>
       <Spacer spacerId="1" flip/>
-      <Spacer spacerId="2" />
-      <AboutMe />
-      <Spacer spacerId="3" flip/>
       <Footer />
     </Element>
   );

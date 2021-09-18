@@ -16,14 +16,14 @@ const Footer = (props) => {
           id="footerLogo"
           src={LogoSVG}
           className="navLogo"
-    onClick={scrollToTop}
+          onClick={scrollToTop}
           style={{ cursor: "pointer" }}
           alt="Piboy Technical Solutions Ltd."
         />
       </div>
       <p className="col">
-        Copyright &copy; {d.getFullYear()} {props.site_name}.<br />{" "}
-        All rights reserved.
+        Copyright &copy; {d.getFullYear()} Piboy Technical Solutions Ltd.<br /> All rights
+        reserved.
       </p>
       <div className="col">
         <ChevronDoubleUp

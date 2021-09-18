@@ -24,22 +24,22 @@ const Message = (props) => {
 
 const Greeting = (props) => {
   const [logoVisible, setLogoVisible] = useState("false");
-  console.log(!logoVisible);
 
   var greeting = `My name is Scott. I'm a freelance web developer, and founder of...`;
 
   return (
     <div id="greeting" className="row mx-5">
-      <p className="col lead p-2">
+      <div className="col lead p-2">
         <Typewriter
           options={{ skipAddStyles: false, }}
           onInit={(typewriter) => {
             typewriter
-              .changeDelay(50)
+              .changeDelay(40)
               .typeString(greeting)
               .callFunction(() => {
-                console.log("String typed out!");
+                console.log(`Before: ${logoVisible}`);
                 setLogoVisible(!logoVisible);
+                ;
               })
               .start();
           }}
@@ -52,7 +52,7 @@ const Greeting = (props) => {
             alt="Piboy Technical Solutions Ltd. Full Logo"
           />
         </div>
-      </p>
+      </div>
     </div>
   );
 };
