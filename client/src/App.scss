@@ -1,0 +1,55 @@
+/* The following block can be included in a custom.scss */
+
+/* make the customizations */
+$enable-negative-margins: true;
+
+$primary: #277da1;
+$info: #38ab8b;
+$success: #add785;
+$green: #98cd67;
+$warning: #fac751;
+$dark: #212529;
+
+
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
+
+/* custom css below */
+.blue {
+    background: $primary !important;
+  }
+  
+  .teal {
+    background: $info !important;
+  }
+  
+  .yellow {
+    background: $warning !important;
+  }
+  
+  .green {
+    background: $green !important;
+  }
+  
+  .orange {
+    background: #f3733c !important;
+  }
+  
+  .lead {
+    padding-bottom: 3em;
+  }
+  
+  .navLogo {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .chevron {
+    cursor: pointer;
+    padding-bottom: 1.3em !important;
+  }
+  
+  .chevron:active {
+    background-color: $primary !important;
+  }

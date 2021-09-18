@@ -13,3 +13,7 @@ main {
     scroll-margin-top: 0rem !important;
   }
 }
+
+.hidden {
+  visibility: hidden !important;
+}
