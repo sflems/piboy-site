@@ -11,9 +11,9 @@ const Spacer = (props) => {
   const waveRef5 = useRef(null);
 
   return (
-    <div id={"spacer"+props.spacerId} className={"spacer row mx-0 p-0 "+ (props.className ? props.className : "") + (props.flip ? " flip" : "")} >
+    <div id={"spacer"+props.spacerId} className={"spacer row m-0 p-0 "+ (props.className ? props.className : "") + (props.flip ? " flip" : "")} >
       <svg
-        className="waves mt-md-n4 "
+        className="waves m-0 p-0"
         viewBox="0 0 900 200"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"

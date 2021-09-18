@@ -4,11 +4,11 @@
 
 .spacer {
     overflow: clip;
+    margin-top: -1em !important;
 }
   
 .waves {
     width: 105%;
     height: 100%;
-    padding: 0 !important;
     scale: 1.04;
   }

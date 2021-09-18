@@ -10,7 +10,7 @@ const Main = (props) => {
   var greeting = `My name is Scott. I'm a freelance web developer, and founder of...`;
 
   return (
-    <main id={props.id} className="row bg-primary m-0">
+    <main id={props.id} className="row bg-primary m-0 flex-grow-1">
       <div className="col mx-0 my-auto pt-2 pt-md-4">
         <div id="greeting" className="row m-2 pt-md-4">
           <motion.h4
@@ -26,32 +26,31 @@ const Main = (props) => {
           <div className="col m-0 p-0">
             <div className="row px-4">
               <div className="col lead">
-              <Typewriter
-          options={{ skipAddStyles: false, }}
-          onInit={(typewriter) => {
-            typewriter
-              .changeDelay(40)
-              .typeString(greeting)
-              .callFunction(() => {
-                console.log(setLogoVisible(!logoVisible));
-                ;
-              })
-              .start();
-          }}
-        />
-        </div>
+                <Typewriter
+                  options={{ skipAddStyles: false }}
+                  onInit={(typewriter) => {
+                    typewriter
+                      .changeDelay(40)
+                      .typeString(greeting)
+                      .callFunction(() => {
+                        console.log(setLogoVisible(!logoVisible));
+                      })
+                      .start();
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div id="logoHolder" className="row m-0">
-          <div className="col mx-auto px-5">
+        <div id="logoHolder" className="row m-0 mt-2 mt-md-0">
+          <div className="col mx-auto">
             <motion.img
+              className="img-fluid px-5"
               variants={variants}
               animate="shown"
               initial="hidden"
               transition={{ delay: 3, duration: 1.5 }}
               src={FullLogo}
-              className="img-fluid px-5"
               alt="Piboy Technical Solutions Ltd. Full Logo"
             ></motion.img>
           </div>

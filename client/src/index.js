@@ -10,7 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App className="app" />
+      <App className="app flex-grow-1 " />
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

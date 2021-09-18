@@ -6,9 +6,9 @@ import Spacer from "./Spacer.js";
 const NavBar = () => {
   return (
     <>
-      <div id="NavBar" className="row container-md mx-auto my-0 pt-2 mb-n2 mb-sm-n4">
-        <div className="col-2 mx-auto">
-          <a className="nav-link link-primary" href="/">
+      <div id="NavBar" className="row container-md mx-auto my-0 pt-2 mb-n2 mb-lg-n5 mb-sm-n4">
+        <div className="col-2 mx-auto p-0">
+          <a className="nav-link" href="/">
             <img
               id="navLogo"
               src={LogoSVG}
@@ -17,7 +17,7 @@ const NavBar = () => {
             />
           </a>
         </div>
-        <div className="col-10 my-auto h-4">
+        <div className="col-10 my-auto h-4 p-0">
           <ul className="nav justify-content-end">
             <li className="nav-item">
               <Link className="nav-link link-success" to="/">
@@ -38,7 +38,7 @@ const NavBar = () => {
         </div>
       </div>
 
-      <Spacer spacerId="0" />
+      <Spacer spacerId="0" className="mt-md-n4 mt-sm-n2"/>
     </>
   );
 };

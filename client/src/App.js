@@ -8,18 +8,18 @@ import NavBar from "./components/NavBar.js";
 
 function App() {
   return (
-    <div name="home" id="home" className="home m-0">
+    <>
       <NavBar />
       <Switch>
         <Route path="/about">
           <AboutMe />
         </Route>
         <Route path="/">
-          <Main />
+          <Main id="main"/>
         </Route>
       </Switch>
       <Footer />
-    </div>
+    </>
   );
 }
 
