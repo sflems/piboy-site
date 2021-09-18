@@ -1,13 +1,11 @@
 import { useState } from "react";
-import Logo from "./Logo";
 import Typewriter from "typewriter-effect";
 import "./Main.css";
 import FullLogo from "../media/full-logo.png";
 
 const Main = (props) => {
   return (
-    <main id={props.id} className="row row-cols-1 row-cols-md-2 bg-primary m-0">
-      <Logo />
+    <main id={props.id} className="row bg-primary m-0">
       <div className="col mx-0 my-auto pt-2 pt-md-4">
         <Message {...props} />
         <Greeting {...props} />
@@ -16,21 +14,19 @@ const Main = (props) => {
   );
 };
 
-const Message = ({ isLoaded, message }) => {
-  if (!isLoaded) return null;
+const Message = (props) => {
   return (
     <div id="message" className="row m-0 pt-md-4">
-      <p className="h4">{message}</p>
+      <p className="h4">Welcome to piboy.ca!</p>
     </div>
   );
 };
 
-const Greeting = ({ first_name, site_name }) => {
+const Greeting = (props) => {
   const [logoVisible, setLogoVisible] = useState("false");
   console.log(!logoVisible);
-  if (!first_name || !site_name) return <div>Loading ....</div>;
 
-  var greeting = `My name is ${first_name}. I'm a freelance web developer, and founder of ${site_name}.`;
+  var greeting = `My name is Scott. I'm a freelance web developer, and founder of...`;
 
   return (
     <div id="greeting" className="row mx-5">
@@ -53,7 +49,7 @@ const Greeting = ({ first_name, site_name }) => {
             src={FullLogo}
             className={(logoVisible === "false" ? "hidden " : "") + "my-n4"}
             width="200px"
-            alt={site_name}
+            alt="Piboy Technical Solutions Ltd. Full Logo"
           />
         </div>
       </p>

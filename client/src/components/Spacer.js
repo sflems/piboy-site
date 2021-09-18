@@ -1,5 +1,4 @@
 import { useLayoutEffect, useRef } from "react";
-import KUTE from "kute.js";
 
 import "./Spacer.css";
 
@@ -10,31 +9,6 @@ const Spacer = (props) => {
   const waveRef3 = useRef(null);
   const waveRef4 = useRef(null);
   const waveRef5 = useRef(null);
-
-  useLayoutEffect(() => {
-    var tweens = [
-        KUTE.fromTo(
-            waveRef0.current,
-            { path: waveRef0.current },
-            { path: waveRef1.current },
-            { morphPrecision: 10, repeat: Infinity, duration: 3000, yoyo: true }
-        ),
-        KUTE.fromTo(
-            waveRef2.current,
-            { path: waveRef2.current },
-            { path: waveRef3.current },
-            { morphPrecision: 10, repeat: Infinity, duration: 3000, yoyo: true }
-        ),
-        KUTE.fromTo(
-            waveRef4.current,
-            { path: waveRef4.current },
-            { path: waveRef5.current },
-            { morphPrecision: 10, repeat: Infinity, duration: 3000, yoyo: true }
-        ),
-    ];
-    tweens.forEach((tween)=> tween.start());
-  }, []);
-  
 
   return (
     <div id={"spacer"+props.spacerId} className={"spacer row my-md-n4 mx-0 p-0 "+ (props.className ? props.className : "") + (props.flip ? " flip" : "")} >

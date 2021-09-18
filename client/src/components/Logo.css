@@ -3,34 +3,10 @@ div.logo {
   overflow: visible;
 }
 
-.rotate {
-  animation: rotate 7s ease-in-out infinite reverse;
-  animation-direction: alternate;
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg) scale(1.5);
-  }
-}
-
 .Splash-logo {
   height: 256px;
   width: 256px;
-  position: absolute;
-  top: calc(50% - 128px);
-  left: calc(50% - 128px);
   display: block;
   margin: 0 auto;
-  z-index: 10;
-}
-
-svg.blob {
-  display: block;
-  overflow: visible;
-  margin: 0 auto !important;
-}
-
-svg g path#blob2 {
-  visibility: hidden;
+  z-index: 1;
 }
