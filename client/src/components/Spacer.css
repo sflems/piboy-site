@@ -3,12 +3,13 @@
   }
 
 .spacer {
-    overflow: clip;
-    margin-top: -1em !important;
+    z-index: 0;
+    width: 100% !important; 
+    padding: 0 !important;
+    display: flex;
 }
   
 .waves {
     width: 105%;
     height: 100%;
-    scale: 1.04;
   }

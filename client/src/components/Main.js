@@ -10,8 +10,8 @@ const Main = (props) => {
   var greeting = `My name is Scott. I'm a freelance web developer, and founder of...`;
 
   return (
-    <main id={props.id} className="row bg-primary m-0 flex-grow-1">
-      <div className="col mx-0 my-auto pt-2 pt-md-4">
+    <section id={props.id} className={"row bg-primary m-0 pt-2 flex-grow-1 " + (props.className ? props.className : "")}>
+      <div className="col mx-0 my-auto pt-1 ">
         <div id="greeting" className="row m-2 pt-md-4">
           <motion.h4
             variants={variants}
@@ -22,7 +22,7 @@ const Main = (props) => {
             Hello, and welcome to Piboy.ca!
           </motion.h4>
         </div>
-        <div id="message" className="row mx-5">
+        <div id="message" className="row mx-5 p-3">
           <div className="col m-0 p-0">
             <div className="row px-4">
               <div className="col lead">
@@ -42,10 +42,10 @@ const Main = (props) => {
             </div>
           </div>
         </div>
-        <div id="logoHolder" className="row m-0 mt-2 mt-md-0">
+        <div id="logoHolder" className="row m-0">
           <div className="col mx-auto">
             <motion.img
-              className="img-fluid px-5"
+              className="img-fluid motionLogo px-5"
               variants={variants}
               animate="shown"
               initial="hidden"
@@ -56,7 +56,7 @@ const Main = (props) => {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import AboutMe from "./components/AboutMe.js";
@@ -12,7 +12,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/about">
-          <AboutMe />
+          <AboutMe id="aboutMe"/>
         </Route>
         <Route path="/">
           <Main id="main"/>

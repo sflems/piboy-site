@@ -9,7 +9,7 @@ const Footer = (props) => {
   const scrollToTop = scroll.scrollToTop;
   return (
     <>
-      <Spacer spacerId="1" flip />
+      <Spacer spacerId="1" className="mb-n4" flip />
       <footer
         id="footer"
         className="row row-cols-1 container mx-auto mb-0 mt-auto text-white-50 p-3"

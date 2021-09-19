@@ -1,19 +1,11 @@
-main {
-  overflow-x: clip;
-}
-
-@media (min-width: 992px) {
-  #main2 {
-    scroll-margin-top: 5rem;
+@media (max-width: 576px) {
+  .Typewriter {
+    min-height: 3em;
   }
 }
 
-@media (max-width: 991px) {
-  #main2 {
-    scroll-margin-top: 0rem !important;
+@media (max-width: 768px) {
+  .Typewriter {
+    min-height: 6em;
   }
-}
-
-.img-fluid {
-  max-width: 66vw !important;
 }
