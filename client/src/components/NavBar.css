@@ -6,3 +6,11 @@
 .nav-link:hover {
   cursor: pointer;
 }
+
+.nav-link {
+  cursor: default !important;;
+}
+
+.nav-link div {
+  cursor: pointer;
+}

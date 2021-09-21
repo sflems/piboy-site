@@ -32,7 +32,7 @@ const NavBar = () => {
             {routes.map((route, key) => {
               return (
                 <motion.li key={`route-${key}`} className="nav-item" variants={variants.containers}>
-                  <Link className="nav-link" key={`routeLink-${key}`} to={route.route} role="button">
+                  <Link className="nav-link" key={`routeLink-${key}`} to={route.route}>
                     <motion.div
                       className="link-success"
                       variants={variants.buttons}
