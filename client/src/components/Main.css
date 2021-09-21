@@ -1,11 +1,21 @@
-@media (max-width: 576px) {
+@media (max-width: 575px) { 
+  .Typewriter {
+    min-height: 5em;
+  }
+ }
+@media (min-width: 576px) { 
   .Typewriter {
     min-height: 3em;
   }
-}
-
-@media (max-width: 768px) {
+ }
+@media (min-width: 768px) { 
   .Typewriter {
-    min-height: 6em;
+    min-height: 1em;
   }
+ }
+
+ .motionLogo {
+  width: 100%;
+  max-width: 600px;
+  min-width: 300px;
 }

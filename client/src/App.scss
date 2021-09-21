@@ -1,5 +1,4 @@
 /* The following block can be included in a custom.scss */
-
 /* make the customizations */
 $enable-negative-margins: true;
 
@@ -9,8 +8,6 @@ $success: #add785;
 $green: #98cd67;
 $warning: #fac751;
 $dark: #212529;
-
-
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
@@ -56,10 +53,5 @@ $dark: #212529;
     display: flex;
     flex-grow: 1 !important;
     align-content: baseline;
-  }
-
-  .motionLogo {
-    width: 100%;
-    max-width: 768px;
-    min-width: 300px;
+    justify-content: center;
   }

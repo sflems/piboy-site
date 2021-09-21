@@ -9,7 +9,7 @@ const Footer = (props) => {
   const scrollToTop = scroll.scrollToTop;
   return (
     <>
-      <Spacer spacerId="1" className="mb-n4" flip />
+      <Spacer spacerId="1" className="" flip />
       <footer
         id="footer"
         className="row row-cols-1 container mx-auto mb-0 mt-auto text-white-50 p-3"
@@ -25,8 +25,8 @@ const Footer = (props) => {
           />
         </div>
         <p className="col">
-          Copyright &copy; {d.getFullYear()} Piboy Technical Solutions Ltd.
-          <br /> All rights reserved.
+          <span>Copyright &copy; {d.getFullYear()} Piboy Technical Solutions Ltd.</span> <br/>
+          <span>All rights reserved.</span>
         </p>
         <div className="col">
           <ChevronDoubleUp
