@@ -16,7 +16,7 @@ on:
     branches: [ master, framer ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ master framer ]
+    branches: [ master, framer ]
   schedule:
     - cron: '37 21 * * 0'
 
