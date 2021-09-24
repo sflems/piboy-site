@@ -14,7 +14,7 @@ function App() {
     <>
       <NavBar />
       <AnimateSharedLayout type="crossfade">
-        <motion.div layout initial={{opacity: 1}} id="contentWrapper" className="bg-primary m-0 p-0">
+        <motion.div layout initial={{opacity: 1, flexGrow:1}} id="contentWrapper" className="bg-primary m-0 p-0">
           <AnimatePresence initial={variants.pages.hidden} exitBeforeEnter>
             <Switch location={location} key={location.key}>
               <Route id="aboutMe" path={routes[1].route} component={AboutMe} />
