@@ -17,28 +17,22 @@ export const variants = {
   pages: {
     hidden: {
       opacity: 0,
-      scale: 0,
-      x: "-100vw",
-      originY: "0%",
+      x: -1000,
     },
-    shown: {
+    visible: {
       opacity: 1,
-      scale: 1,
       x: 0,
       transition: {
-        duration: 0.2,
+        duration: 0.5,
         when: "beforeChildren",
-        staggerChildren: 0.2,
-        ease: "easeIn",
+        ease: "easeInOut",
         type: "spring",
       },
     },
       exit: {
+        opacity: 0,
         x: "100vw",
-        originY: "0%",
         transition: {
-          duration: 0.1,
-          ease: "easeInOut",
           when: "afterChildren",
         },
     },
@@ -46,41 +40,69 @@ export const variants = {
   containers: {
     hidden: {
       opacity: 0,
-      x: "-100vw",
-      transition: {
-        when: "afterChildren",
-      },
+      height: "100%",
     },
-    shown: {
+    visible: {
       opacity: 1,
-      x: 0,
       transition: {
-        duration: 0.1,
-        when: "beforeChildren",
-        staggerChildren: 0.1,
-        ease: "easeIn",
+        delayChildren: 0.3,
+        staggerChildren: 0.3,
+        ease: "easeInOut",
         type: "spring",
+        stiffness: 300,
+        damping: 30
       },
     },
   },
   buttons: {
     hover: {
-        scale: 1.3,
-        textShadow: "0 0 6px rgb(var(--bs-success-rgb))",
-        originX: "50%",
+      scale: 1.3,
+      textShadow: "0 0 6px rgb(var(--bs-success-rgb))",
+      originX: "50%",
+    },
+    hoverTopButton: {
+      scale: 1.1,
+      boxShadow: "0 0 6px #add785",
+      originX: "50%",
+      originY: "50%"
+    },
+    tap: {
+      scale: 0.8,
+      textShadow: "0 0 6px rgb(var(--bs-primary-rgb))",
+    },
+    tapTopButton: {
+      scale: 0.8,
+      boxShadow: "0 0 12px var(--bs-primary)",
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      textShadow: "none",
+      boxShadow: "none",
+      transition: {
+        ease: "easeIn",
+        type: "spring",
       },
-      tap: {
-        scale: 0.8,
-        textShadow: "0 0 6px rgb(var(--bs-primary-rgb))",
-      },
-      shown: {
-        opacity: 1,
-        scale: 1,
-        textShadow: "none",
+    },
+  },
+  writer: {
+    sentence: {
+      hidden: { opacity: 1 },
+      visible: {
+        opacity:1,
         transition: {
-          ease: "easeIn",
-          type: "spring",
+          delay: 0.75,
+          staggerChildren: 0.05,
+          when: "beforeChildren"
         },
       },
+    },
+    letter: {
+      hidden: { opacity:0, y:50 },
+      visible: {
+        opacity: 1,
+        y: 0,
+      }
+    }
   }
 };

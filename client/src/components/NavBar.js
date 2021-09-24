@@ -7,7 +7,7 @@ import Spacer from "./Spacer.js";
 
 const NavBar = () => {
   return (
-    <>
+    <div className="m-0 p-0">
       <div
         id="NavBar"
         className="row container-md mx-auto my-0 pt-2 mb-n2 mb-sm-n4"
@@ -25,7 +25,7 @@ const NavBar = () => {
         <motion.div
           className="col-10 my-auto h-4 p-0"
           variants={variants.containers}
-          animate="shown"
+          animate="visible"
           initial="hidden"
         >
           <ul className="nav justify-content-end">
@@ -36,7 +36,7 @@ const NavBar = () => {
                     <motion.div
                       className="link-success"
                       variants={variants.buttons}
-                      animate="shown"
+                      animate="visible"
                       whileHover="hover"
                       whileTap="tap"
                     >
@@ -50,7 +50,7 @@ const NavBar = () => {
         </motion.div>
       </div>
       <Spacer spacerId="0" className="pt-2 pt-sm-4" />
-    </>
+    </div>
   );
 };
 

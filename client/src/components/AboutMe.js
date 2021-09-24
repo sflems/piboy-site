@@ -4,38 +4,24 @@ import "./AboutMe.css";
 
 const AboutMe = (props) => {
   return (
-    <section
+    <motion.section
+      variants={variants.pages}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
       id={props.id}
       className={
-        "bg-primary text-white py-md-5 m-0 p-2 p-md-4" +
+        "row bg-primary text-white py-md-5 m-0 p-2 p-md-4" +
         (props.className ? props.className : "")
       }
     >
       <motion.div
-        variants={variants.pages}
+        variants={variants.containers}
         initial="hidden"
-        animate="shown"
-        exit="exit"
+        animate="visible"
         className="row row-cols-1 row-cols-md-3 m-0 p-0"
       >
-        <div className="col p-3">
-          <div className="card bg-dark">
-            <img
-              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-              className="card-img-top"
-              alt="..."
-            />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <h6 className="card-subtitle mb-2 text-muted ">Card subtitle</h6>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col p-3 ">
+        <motion.div className="col p-3" variants={variants.containers}>
           <div className="card bg-dark">
             <div className="card-body">
               <h5 className="card-title">Card title</h5>
@@ -46,14 +32,9 @@ const AboutMe = (props) => {
               </p>
             </div>
           </div>
-        </div>
-        <div className="col p-3 ">
+        </motion.div>
+        <motion.div className="col p-3" variants={variants.containers}>
           <div className="card bg-dark">
-            <img
-              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-              className="card-img-top"
-              alt="..."
-            />
             <div className="card-body">
               <h5 className="card-title">Card title</h5>
               <h6 className="card-subtitle mb-2 text-muted ">Card subtitle</h6>
@@ -63,9 +44,21 @@ const AboutMe = (props) => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
+        <motion.div className="col p-3" variants={variants.containers}>
+          <div className="card bg-dark">
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <h6 className="card-subtitle mb-2 text-muted ">Card subtitle</h6>
+              <p className="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 };
 
