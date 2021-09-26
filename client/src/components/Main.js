@@ -5,7 +5,7 @@ import FullLogo from "../media/full-logo.png";
 import { variants } from "../Constants.jsx";
 
 const Main = (props) => {
-  var greeting = `My name is Scott. I'm a freelance developer and graphic designer based out of Campbell River, BC, Canada.`;
+  var greeting = `Hello, my name's Scott. I'm the lead developer and graphic designer with Piboy Technical Solutions.`;
 
   return (
     <motion.section
@@ -15,7 +15,7 @@ const Main = (props) => {
       exit="exit"
       id={props.id}
       className={
-        "row bg-primary m-0 p-0" + (props.className ? props.className : "")
+        "row m-0 p-0" + (props.className ? props.className : "")
       }
     >
       <motion.div
@@ -29,7 +29,7 @@ const Main = (props) => {
           id="greeting"
           className="row m-1 pt-md-4"
         >
-          <h4>Hello, and welcome to Piboy.ca!</h4>
+          <h4>Welcome to Piboy.ca!</h4>
         </motion.div>
         <motion.div
           variants={variants.containers}

@@ -12,3 +12,7 @@
     width: 105%;
     height: 100%;
   }
+
+#spacer1 {
+  margin-top: -2px !important;
+}

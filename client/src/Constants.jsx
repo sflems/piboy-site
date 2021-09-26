@@ -17,13 +17,13 @@ export const variants = {
   pages: {
     hidden: {
       opacity: 0,
-      x: -1000,
+      x: "-100vw",
     },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.5,
+        duration: 1,
         when: "beforeChildren",
         ease: "easeInOut",
         type: "spring",
@@ -57,29 +57,24 @@ export const variants = {
   buttons: {
     hover: {
       scale: 1.3,
-      textShadow: "0 0 6px rgb(var(--bs-success-rgb))",
       originX: "50%",
     },
     hoverTopButton: {
       scale: 1.1,
-      boxShadow: "0 0 6px #add785",
       originX: "50%",
       originY: "50%"
     },
     tap: {
       scale: 0.8,
-      textShadow: "0 0 6px rgb(var(--bs-primary-rgb))",
     },
     tapTopButton: {
-      scale: 0.8,
-      boxShadow: "0 0 12px var(--bs-primary)",
+      scale: 0.8
     },
     visible: {
       opacity: 1,
       scale: 1,
-      textShadow: "none",
-      boxShadow: "none",
       transition: {
+        duration:0.2,
         ease: "easeIn",
         type: "spring",
       },
@@ -91,8 +86,8 @@ export const variants = {
       visible: {
         opacity:1,
         transition: {
-          delay: 0.75,
-          staggerChildren: 0.05,
+          delay: 0.5,
+          staggerChildren: 0.03,
           when: "beforeChildren"
         },
       },
@@ -102,7 +97,7 @@ export const variants = {
       visible: {
         opacity: 1,
         y: 0,
-      }
-    }
+      },
+    },
   }
 };

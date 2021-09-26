@@ -1,9 +1,13 @@
 .chevron {
     overflow: clip;
+    box-shadow: none;
 }
 .chevron:active {
-    box-shadow: 0px 0px 3px #277da1;
+    box-shadow: 0px 0px 8px #277da1;
 }
-.chevron:hover {
-    box-shadow: 0px 0px 3px #add785;
+
+@media (min-width: 576px) {
+    .chevron:hover {
+        box-shadow: 0px 0px 8px #add785;
+    }
 }

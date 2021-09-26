@@ -34,23 +34,22 @@ const Footer = (props) => {
         <div className="col">
           <motion.svg
             variants={variants.buttons}
+            initial="visible"
+            animate="visible"
             whileHover="hoverTopButton"
             whileTap="tapTopButton"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
             width="4em"
             height="4em"
-            fill="currentColor"
             className="m-1 p-3 chevron text-dark green rounded-circle"
             onClick={scrollToTop}
             style={{ cursor: "pointer" }}
           >
             <path
-              fill-rule="evenodd"
               d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"
             ></path>
             <path
-              fill-rule="evenodd"
               d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
             ></path>
           </motion.svg>
