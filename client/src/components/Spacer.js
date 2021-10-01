@@ -13,7 +13,7 @@ const Spacer = (props) => {
   return (
     <div id={"spacer"+props.spacerId} className={"spacer row m-0 p-0 "+ (props.className ? props.className : "") + (props.flip ? " flip" : "")} >
       <svg
-        className="waves m-0 p-0"
+        className="waves p-0"
         viewBox="0 50 900 150"
         width="900px"
         height="5em"

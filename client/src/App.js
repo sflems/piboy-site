@@ -14,18 +14,27 @@ function App() {
     <>
       <NavBar />
       <AnimateSharedLayout type="crossfade">
-        <motion.div layout initial={{opacity: 1, flexGrow:1}} id="contentWrapper" className="bg-primary m-0 p-0">
-          <AnimatePresence initial={variants.pages.hidden} exitBeforeEnter>
+        <motion.div
+          variants={variants.containers}
+          initial={false}
+          animate="visible"
+          id="contentWrapper"
+          className="bg-primary m-0 p-0"
+        >
+          <AnimatePresence
+            layout
+            initial={variants.pages.hidden}
+            exitBeforeEnter
+          >
             <Switch location={location} key={location.key}>
               <Route id="aboutMe" path={routes[1].route} component={AboutMe} />
-              <Route id="main" path={routes[0].route} component={Main} />
+              <Route layoutId="main" id="main" path={routes[0].route} component={Main} />
             </Switch>
           </AnimatePresence>
         </motion.div>
-        <Footer />
       </AnimateSharedLayout>
+      <Footer />
     </>
   );
 }
-
 export default App;

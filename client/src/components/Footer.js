@@ -11,7 +11,7 @@ var d = new Date();
 const Footer = (props) => {
   const scrollToTop = scroll.scrollToTop;
   return (
-    <motion.div layout className="m-0 p-0">
+    <div className="m-0 p-0">
       <Spacer spacerId="1" className="" flip />
       <footer
         id="footer"
@@ -55,7 +55,7 @@ const Footer = (props) => {
           </motion.svg>
         </div>
       </footer>
-    </motion.div>
+    </div>
   );
 };
 

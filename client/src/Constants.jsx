@@ -13,28 +13,42 @@ export const routes = [
     },
 ]
 
+export const services = [
+  "API & Web Design",
+  "Social Media & Marketing",
+  "Custom Integrated Solutions",
+  "Web Hosting",
+  "Wordpress Management",
+  "UI/UX Design"
+]
+
 export const variants = {
   pages: {
     hidden: {
       opacity: 0,
       x: "-100vw",
+      y: 0,
     },
     visible: {
       opacity: 1,
       x: 0,
+      y: 0,
       transition: {
+        translate: 0,
         duration: 1,
+        staggerChildren: 0.5,
         when: "beforeChildren",
         ease: "easeInOut",
         type: "spring",
       },
     },
-      exit: {
-        opacity: 0,
-        x: "100vw",
-        transition: {
-          when: "afterChildren",
-        },
+    exit: {
+      opacity: 0,
+      x: "100vw",
+      y: 0,
+      transition: {
+        when: "afterChildren",
+      },
     },
   },
   containers: {
@@ -45,8 +59,8 @@ export const variants = {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.3,
+        delayChildren: 0.5,
+        staggerChildren: 0.5,
         ease: "easeInOut",
         type: "spring",
         stiffness: 300,

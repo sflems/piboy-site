@@ -3,11 +3,13 @@
 $enable-negative-margins: true;
 
 $primary: #277da1;
-$info: #38ab8b;
+$info: #00ac9f;
 $success: #add785;
 $green: #98cd67;
 $warning: #fac751;
+$danger: #ed2627;
 $dark: #212529;
+
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
@@ -17,6 +19,10 @@ $dark: #212529;
   html {
     font-size: 110%;
   }
+}
+
+html {
+  overflow-x: hidden;
 }
 
 .blue {
@@ -56,14 +62,38 @@ $dark: #212529;
   div#contentWrapper {
     width: 100vw;
     max-width: 100%;
+    flex-grow: 1 !important;
+    flex-direction: column;
   }
 
   section {
     overflow-x: clip;
     z-index: 1;
-    display: flex;
-    flex-grow: 1 !important;
-    flex-direction: column;
     align-content: baseline;
     justify-content: center;
+  }
+
+  .glass {
+    background-color: #0003 !important;
+    border-style: none;
+    border-radius: 0;
+  }
+
+  .card {
+    border-radius: 0em;
+  }
+
+  .hero2 {
+    border-radius: 2em;
+  }
+
+  .card-group > .card {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .background-img {
+    background-image: url("./media/HillsandMountains-sunset.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
