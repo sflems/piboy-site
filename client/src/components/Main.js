@@ -48,7 +48,7 @@ const Main = (props) => {
         animate="visible"
         exit="exit"
         id={props.id}
-        className={"row m-0 p-0" + (props.className ? props.className : "")}
+        className="row m-0 p-0"
       >
         <motion.div
           className="px-2 text-center text-white"
@@ -91,22 +91,20 @@ const Main = (props) => {
                 delay: 0.2,
               },
             }}
-            className="overflow-hidden pt-4 hero-img"
+            className="pt-4 overflow-hidden hero-img"
           >
-            <motion.div
-              initial={{ y: 1000 }}
-              animate={{
-                y: 0,
-                transition: {
-                  duration: 1.5,
-                  ease: "easeInOut",
-                  type: "spring",
-                  delay: 0.2,
-                },
-              }}
-              className="container mb-lg-0 mb-sm-n5 mb-md-n5"
-            >
-              <img
+            <div className="container mb-lg-0 mb-sm-n5 mb-md-n5">
+              <motion.img
+                initial={{ y: 1000 }}
+                animate={{
+                  y: 0,
+                  transition: {
+                    duration: 1.5,
+                    ease: "easeInOut",
+                    type: "spring",
+                    delay: 0.2,
+                  },
+                }}
                 src={devSVG}
                 className="img-fluid bg-info rounded-3 shadow mb-4"
                 style={{ "--bs-bg-opacity": 0.25 }}
@@ -115,7 +113,7 @@ const Main = (props) => {
                 width="700"
                 height="400"
               />
-            </motion.div>
+            </div>
           </motion.div>
         </motion.div>
       </motion.section>
@@ -127,9 +125,9 @@ const Main = (props) => {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="row flex-md-row align-items-center bg-primary g-5 pb-5 mx-0 section-border border-info my-0 card glass shadow"
+        className="row flex-md-row align-items-center bg-primary g-5 p-2 p-md-4 m-0 border-top section-border border-info card glass shadow"
       >
-        <motion.div variants={container} className="col-auto m-2 p-0 p-md-3">
+        <motion.div variants={container} className="col-auto m-0 p-0 p-md-3">
           <Card
             title="Website Development &amp; Hosting"
             icon={LaptopIcon}
@@ -145,7 +143,7 @@ const Main = (props) => {
           <Card
             title="Mobile &amp; Web Applications"
             icon={MobileIcon}
-            text="APIs? Mobile Apps? Internal Applications and Software? We do that.
+            text="APIs? Mobile Apps? Internal Applications and Software? We do that. Get your business on the go.
           Let us examine your needs and consult on what we can achieve
           together."
           />
@@ -169,15 +167,22 @@ const Main = (props) => {
         className="row flex-md-row-reverse align-items-center bg-primary g-5 py-3 mx-0 my-0"
       >
         <motion.div
-        variants={container} className="col-10 col-sm-8 col-md-6 px-0">
+          variants={container}
+          className="col-10 col-sm-8 col-md-6 px-0 pb-4"
+        >
           <motion.img
-            initial={{opacity: 1}}
-            animate={{scale:1.1, x:[0,15,0,5], y:[-10,0,5,0], transition: {
-              duration:5,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatType: "reverse"
-            }}}
+            initial={{ opacity: 1 }}
+            animate={{
+              scale: 1.1,
+              x: [0, 15, 0, 5],
+              y: [-10, 0, 5, 0],
+              transition: {
+                duration: 5,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "reverse",
+              },
+            }}
             src={spaceCatSVG}
             className="d-block mx-lg-auto img-fluid space-cat"
             alt="Space woman and space cat floating in zero gravity."
@@ -186,29 +191,30 @@ const Main = (props) => {
             height="500"
           />
         </motion.div>
-        <motion.div
-        variants={container} className="col-md-6">
+        <motion.div variants={container} className="col-md-6">
           <h1 className="display-5 fw-bold lh-1 mb-3">
             Simple, passionate experience.
           </h1>
           <p className="lead px-md-5">
             We love what we do. We understand that your investment into your
-            brand, digital presence and website is <strong className="fw-bold text-warning">CRITICAL.</strong>{" "}
-            Our experienced development and techno-savvy team has got your back.
+            brand, digital presence and website is{" "}
+            <strong className="fw-bold text-warning">CRITICAL.</strong> Our
+            experienced development and techno-savvy team has got your back.
           </p>
           <div className="d-grid gap-2 d-md-flex justify-content-center">
-            <motion.button
-              variants={variants.buttons}
-              initial="visible"
-              animate="visible"
-              whileHover="hoverTopButton"
-              whileTap="tap"
-              href="mailto:scott@piboy.ca"
-              type="button"
-              className="btn btn-info text-white btn-lg px-4 me-md-2 rounded-0 shadow"
-            >
-              Contact Us
-            </motion.button>
+            <a href="mailto:scott@piboy.ca">
+              <motion.button
+                variants={variants.buttons}
+                initial="visible"
+                animate="visible"
+                whileHover="hoverTopButton"
+                whileTap="tap"
+                type="button"
+                className="btn btn-info text-white btn-lg px-4 me-md-2 rounded-0 shadow"
+              >
+                Contact Us
+              </motion.button>
+            </a>
           </div>
         </motion.div>
       </motion.section>

@@ -10,7 +10,7 @@ const NavBar = () => {
     <motion.div className="m-0 p-0">
       <div
         id="NavBar"
-        className="row container-md mx-auto my-0 pt-2 mb-n2 mb-sm-n4"
+        className="row container-md mx-auto mb-0 mb-sm-n4"
       >
         <div className="col-2 mx-auto p-0">
           <a className="nav-link" href="/">
@@ -49,7 +49,7 @@ const NavBar = () => {
           </ul>
         </motion.div>
       </div>
-      <Spacer spacerId="0" className="pt-2 pt-sm-4" />
+      <Spacer spacerId="0" className="pt-sm-4" />
     </motion.div>
   );
 };

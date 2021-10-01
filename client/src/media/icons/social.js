@@ -1,7 +1,8 @@
 const SocialIcon = (props) => {
   return (
     <svg
-        {...props}
+      {...props}
+      className={"fa-social " + (props.className ? props.className : "")}
       aria-hidden="true"
       focusable="false"
       data-prefix="fas"

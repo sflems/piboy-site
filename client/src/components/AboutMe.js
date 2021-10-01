@@ -1,6 +1,7 @@
 import { motion, useCycle } from "framer-motion";
 import { variants, services } from "../Constants";
 import "./AboutMe.css";
+import bgSVG from "../media/HillsandMountains-sunset.svg";
 
 const container = {
   hidden: {
@@ -66,7 +67,7 @@ const AboutMe = (props) => {
         exit="exit"
         id={props.id}
         className={
-          "container-lg text-white py-md-5 m-auto p-2 p-md-4" +
+          "container-lg text-white m-auto p-3" +
           (props.className ? props.className : "")
         }
       >
@@ -122,6 +123,30 @@ const AboutMe = (props) => {
                 })}
             </motion.p>
           </motion.div>
+          <motion.section
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="row flex-md-row align-items-center bg-primary g-0 p-0 m-0 glass-rounded card glass shadow"
+          >
+            <motion.img
+              initial={{ opacity: 0, scale:0.5 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  delay: 0.5,
+                  duration: 0.5,
+                  ease: "easeIn",
+                },
+              }}
+              src={bgSVG}
+              className="d-block mx-auto p-2 img-fluid img-rounded"
+              alt="Space woman and space cat floating in zero gravity."
+              loading="lazy"
+            />
+          </motion.section>
           <motion.div
             className="col p-3 my-auto text-start"
             variants={container}
