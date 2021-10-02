@@ -12,7 +12,6 @@ function App() {
   const location = useLocation();
   return (
     <>
-      <NavBar />
       <AnimateSharedLayout type="crossfade">
         <motion.div
           variants={variants.containers}
@@ -21,6 +20,7 @@ function App() {
           id="contentWrapper"
           className="bg-primary m-0 p-0"
         >
+          <NavBar />
           <AnimatePresence
             layout
             initial={variants.pages.hidden}
@@ -28,7 +28,12 @@ function App() {
           >
             <Switch location={location} key={location.key}>
               <Route id="aboutMe" path={routes[1].route} component={AboutMe} />
-              <Route layoutId="main" id="main" path={routes[0].route} component={Main} />
+              <Route
+                layoutId="main"
+                id="main"
+                path={routes[0].route}
+                component={Main}
+              />
             </Switch>
           </AnimatePresence>
         </motion.div>

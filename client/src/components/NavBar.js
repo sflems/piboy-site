@@ -1,56 +1,41 @@
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { routes, variants } from "../Constants";
-import LogoSVG from "../media/logo.svg";
+import { useEffect, useState } from "react";
 import "./NavBar.css";
-import Spacer from "./Spacer.js";
+import Spacer from "./Spacer";
+import NavBarNav from "./NavBarNav";
+import { AnimateSharedLayout, motion } from "framer-motion";
 
 const NavBar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    setScrolled(offset > 125);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
+
   return (
-    <motion.div className="m-0 p-0">
-      <div
-        id="NavBar"
-        className="row container-md mx-auto mb-0 mb-sm-n4"
-      >
-        <div className="col-2 mx-auto p-0">
-          <a className="nav-link" href="/">
-            <img
-              id="navLogo"
-              src={LogoSVG}
-              className="navLogo float-left"
-              alt="Piboy Technical Solutions Ltd."
-            />
-          </a>
-        </div>
+    <AnimateSharedLayout>
+      {scrolled && (
         <motion.div
-          className="col-10 my-auto h-4 p-0"
-          variants={variants.containers}
-          animate="visible"
-          initial="hidden"
+          layout
+          className="offcanvas offcanvas-top m-0 p-0"
+          data-bs-scroll="true"
+          data-bs-backdrop="false"
+          id="offcanvasTop"
+          aria-labelledby="offcanvasTopLabel"
         >
-          <ul className="nav justify-content-end">
-            {routes.map((route, key) => {
-              return (
-                <motion.li key={`route-${key}`} className="nav-item" variants={variants.containers}>
-                  <Link className="nav-link" key={`routeLink-${key}`} to={route.route}>
-                    <motion.div
-                      className="link-success"
-                      variants={variants.buttons}
-                      animate="visible"
-                      whileHover="hover"
-                      whileTap="tap"
-                    >
-                      { route.name }
-                    </motion.div>
-                  </Link>
-                </motion.li>
-              );
-            })}
-          </ul>
+          <NavBarNav scrolled={scrolled} />
+          <Spacer spacerId="0" className="bg-transparent mt-n2" flip />
         </motion.div>
-      </div>
-      <Spacer spacerId="0" className="pt-sm-4" />
-    </motion.div>
+      )}
+      <NavBarNav layout scrolled={scrolled} />
+      <Spacer spacerId="0" className="bg-transparent mt-n2" flip />
+    </AnimateSharedLayout>
   );
 };
 

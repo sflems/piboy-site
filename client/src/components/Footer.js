@@ -12,7 +12,7 @@ const Footer = (props) => {
   const scrollToTop = scroll.scrollToTop;
   return (
     <div className="m-0 p-0">
-      <Spacer spacerId="1" className="" flip />
+      <Spacer spacerId="1" className="bg-primary" />
       <footer
         id="footer"
         className="row row-cols-1 container mx-auto mb-0 mt-auto text-white-50 p-3"

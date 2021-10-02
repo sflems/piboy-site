@@ -131,19 +131,19 @@ const AboutMe = (props) => {
             className="row flex-md-row align-items-center bg-primary g-0 p-0 m-0 glass-rounded card glass shadow"
           >
             <motion.img
-              initial={{ opacity: 0, scale:0.5 }}
+              initial={{ opacity: 0, scale:0 }}
               animate={{
                 opacity: 1,
                 scale: 1,
                 transition: {
-                  delay: 0.5,
-                  duration: 0.5,
-                  ease: "easeIn",
+                  delay: 0.4,
+                  duration: 0.4,
+                  ease: "easeInOut",
                 },
               }}
               src={bgSVG}
               className="d-block mx-auto p-2 img-fluid img-rounded"
-              alt="Space woman and space cat floating in zero gravity."
+              alt="Scenic sunset valley and hills graphic media."
               loading="lazy"
             />
           </motion.section>

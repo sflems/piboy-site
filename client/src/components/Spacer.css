@@ -2,20 +2,10 @@
     transform: rotate(180deg);
   }
 
-@media (max-width: 575px) {
-  .spacer {
-    height: 5vh;
-  }
-}
-
-@media (min-width: 576px) {
-  .spacer {
-    height: 12vh;
-  }
-}
 .spacer {
     width: 100% !important;
     display: flex;
+    height: 10vh;
 }
   
 .waves {

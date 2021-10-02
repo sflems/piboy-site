@@ -127,7 +127,7 @@ const Main = (props) => {
         exit="exit"
         className="row flex-md-row align-items-center bg-primary g-5 p-2 p-md-4 m-0 border-top section-border border-info card glass shadow"
       >
-        <motion.div variants={container} className="col-auto m-0 p-0 p-md-3">
+        <motion.div variants={container} className="col-auto m-0 p-0 px-md-3">
           <Card
             title="Website Development &amp; Hosting"
             icon={LaptopIcon}
@@ -148,14 +148,14 @@ const Main = (props) => {
           together."
           />
           <Card
-            title="SEO, Social Media &amp; Marketing"
+            title="Marketing, SEO &amp; Social Media"
             icon={SocialIcon}
             text="You're busy running your business... we get it. We'll perform an in depth search engine optimization analysis and take the hassle out of managing your social media platforms. Profile setup, post and story templates, advertizing; we can help."
           />
           <Card
-            title="Web Security &amp; Penetration Testing"
+            title="Penetration Testing &amp; Web Security"
             icon={SpiderIcon}
-            text="Threat actors have been growing an ever increasing presence, targeting small business and enterprise alike. Our security and penetration testing packages can expose critical vulnerabilities and help to investigate and mitigate any damage."
+            text="Threat actors have been growing an ever increasing presence, targeting small business and enterprise alike. Our security and penetration testing packages can expose critical vulnerabilities which can help discover, or mitigate, any potential damage."
           />
         </motion.div>
       </motion.section>
@@ -202,7 +202,7 @@ const Main = (props) => {
             experienced development and techno-savvy team has got your back.
           </p>
           <div className="d-grid gap-2 d-md-flex justify-content-center">
-            <a href="mailto:scott@piboy.ca">
+            <a href="mailto:scott@piboy.ca?subject=Inquiry for the Piboy Team">
               <motion.button
                 variants={variants.buttons}
                 initial="visible"
