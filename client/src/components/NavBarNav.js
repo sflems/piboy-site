@@ -4,8 +4,10 @@ import { AnimateSharedLayout, motion } from "framer-motion";
 import { routes, variants } from "../Constants";
 import LogoSVG from "../media/logo.svg";
 
-const NavBarNav = ({ scrolled }) => {
+const NavBarNav = ({ scrolled, offcanvas }) => {
   const scrollToTop = scroll.scrollToTop;
+  console.log(offcanvas);
+
   const handleClick = () => {
     let element = document.getElementById("navbarText");
     element.classList.remove("collapse");
@@ -29,9 +31,12 @@ const NavBarNav = ({ scrolled }) => {
         </a>
         <AnimateSharedLayout>
           <motion.button
-            layout
+            layoutId="menu"
             onClick={scrolled ? handleClick : () => null}
-            className={"navbar-toggler border-0 text-success bg-info shadow-lg" + (scrolled ? " fixed-toggler" : "")}
+            className={
+              "navbar-toggler border-0 text-success bg-info shadow-lg" +
+              (scrolled ? " fixed-toggler" : "")
+            }
             type="button"
             data-bs-toggle={scrolled ? "offcanvas" : "collapse"}
             data-bs-target={scrolled ? "#offcanvasTop" : "#navbarText"}
@@ -61,7 +66,7 @@ const NavBarNav = ({ scrolled }) => {
           id="navbarText"
           className={"collapse navbar-collapse justify-content-end "}
         >
-          <ul className="navbar-nav mb-2 mb-lg-0">
+          <motion.ul layout className="navbar-nav mb-2 mb-lg-0">
             {routes.map((route, key) => {
               return (
                 <motion.li
@@ -92,7 +97,32 @@ const NavBarNav = ({ scrolled }) => {
                 </motion.li>
               );
             })}
-          </ul>
+            {scrolled && (
+              <motion.li
+                layout
+                onClick={handleClick}
+                className="nav-item my-auto"
+                variants={variants.containers}
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasTop"
+                aria-controls="offcanvasTop"
+                aria-label="Toggle navigation"
+              >
+                <motion.button
+                  variants={variants.buttons}
+                  initial={{opacity:0}}
+                  exit={{opacity:0}}
+                  animate="visible"
+                  whileHover="hover"
+                  whileTap="tap"
+                  type="button"
+                  class="btn-close bg-success ms-2 mb-1"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></motion.button>
+              </motion.li>
+            )}
+          </motion.ul>
         </div>
       </motion.div>
     </nav>
