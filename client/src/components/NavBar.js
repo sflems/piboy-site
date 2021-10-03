@@ -8,12 +8,12 @@ const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const handleScroll = () => {
     const offset = window.scrollY;
-    setScrolled(offset > 140);
+    setScrolled(offset > 100);
   };
 
   const handleClick = () => {
-    let element = document.getElementById("navbarText");
-    element.classList.remove("collapse");
+    document.getElementById("navbar").classList.toggle("sticky-top");
+    document.getElementById("navbarText").classList.toggle("collapse");
   };
 
   useEffect(() => {
@@ -21,42 +21,36 @@ const NavBar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrolled]);
+  }, []);
 
   return (
-    <AnimateSharedLayout>
-      <AnimatePresence>
-        {scrolled && (
-          <motion.div
-            className="offcanvas offcanvas-top m-0 p-0"
-            data-bs-scroll="true"
-            data-bs-backdrop="false"
-            id="offcanvasTop"
-            aria-labelledby="offcanvasTopLabel"
-          >
-            <NavBarNav offcanvas={true} scrolled={scrolled} />
-            <Spacer spacerId="0" className="bg-transparent mt-n2" flip />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <NavBarNav scrolled={scrolled} />
-      <Spacer spacerId="0" className="bg-transparent mt-n2" flip />
-
-      <AnimatePresence>
-        {scrolled && (
+    <AnimateSharedLayout type="crossfade">
+      <motion.div layout id="navbar" className="m-0 p-0">
+        <NavBarNav />
+        <Spacer spacerId="0" className="bg-transparent mt-n2" flip />
+        <AnimatePresence exitBeforeEnter>
           <motion.button
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={scrolled ? {
+              opacity: 1,
+              scale: 1,
+              transition: {
+                duration:2,
+                ease: "easeIn",
+                type: "spring",
+              }} : ""}
             exit={{ opacity: 0 }}
+            whileHover="hover"
+            whileTap="tap"
             onClick={handleClick}
             className={
-              "navbar-toggler border-0 text-success bg-info shadow-lg d-none d-md-block" +
-              (scrolled ? " fixed-toggler" : "")
+              "navbar-toggler toggler border-0 text-success bg-info shadow fixed-toggler d-md-none" +
+              (!scrolled && " d-lg-none")
             }
             type="button"
-            data-bs-toggle={scrolled ? "offcanvas" : "collapse"}
-            data-bs-target={scrolled ? "#offcanvasTop" : "#navbarText"}
-            aria-controls={scrolled ? "offcanvasTop" : "navbarText"}
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
             aria-label="Toggle navigation"
           >
             <svg
@@ -77,8 +71,8 @@ const NavBar = () => {
               />
             </svg>
           </motion.button>
-        )}
-      </AnimatePresence>
+        </AnimatePresence>
+      </motion.div>
     </AnimateSharedLayout>
   );
 };

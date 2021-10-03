@@ -3,25 +3,34 @@
   z-index: 1;
 }
 
-.navbar-toggler {
+.toggler {
   height: 2em;
   width: 2em;
+  font-size: 1em;
   z-index: 11;
   border-radius: 50%;
 }
-.navbar-toggler:focus {
+.toggler:focus {
   box-shadow: 0 0 0 0 !important;
 }
 
 .fixed-toggler {
   position: fixed;
-  right: 0.75em;
-  top: 0.75em;
+  right: 1em;
+  top: 1.25em;
   z-index: 11;
 }
 
 .spacer {
   z-index: 0;
+}
+
+.navbar-toggler {
+  padding: 0.25em !important;
+}
+
+svg.fa-ellipsis {
+  padding: 0.25em !important;
 }
 
 .nav-link:hover {

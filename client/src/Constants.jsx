@@ -93,6 +93,7 @@ export const variants = {
         type: "spring",
       },
     },
+    exit: { opacity: 0 }
   },
   writer: {
     sentence: {
