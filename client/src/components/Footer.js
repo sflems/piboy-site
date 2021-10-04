@@ -11,11 +11,11 @@ var d = new Date();
 const Footer = (props) => {
   const scrollToTop = scroll.scrollToTop;
   return (
-    <div className="m-0 p-0">
-      <Spacer spacerId="1" className="bg-primary" />
+    <>
+      <Spacer spacerId="1" className="mt-n3" />
       <footer
         id="footer"
-        className="row row-cols-1 container mx-auto mb-0 mt-auto text-white-50 p-3"
+        className="row row-cols-1 bg-dark container mx-auto mb-0 mt-auto text-white-50 p-3"
       >
         <div className="col p-2">
           <img
@@ -55,7 +55,7 @@ const Footer = (props) => {
           </motion.svg>
         </div>
       </footer>
-    </div>
+    </>
   );
 };
 

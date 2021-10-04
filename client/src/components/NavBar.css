@@ -3,6 +3,7 @@
   z-index: 1;
 }
 
+/* Required as framer motion animates button to hidden on large screens. This enables it on <lg width screens */
 @media (max-width: 992px) {
   .toggler {
     opacity: 1 !important;
@@ -10,8 +11,8 @@
 }
 
 .toggler {
-  height: 2em;
-  width: 2em;
+  height: 2.5em;
+  width: 2.5em;
   font-size: 1em;
   z-index: 11;
   border-radius: 50%;
@@ -24,8 +25,12 @@
 .fixed-toggler {
   position: fixed;
   right: 1em;
-  top: 1.25em;
+  top: 1em;
   z-index: 11;
+}
+
+.navbar {
+  z-index: 1;
 }
 
 .spacer {

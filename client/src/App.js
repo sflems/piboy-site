@@ -28,17 +28,12 @@ function App() {
           >
             <Switch location={location} key={location.key}>
               <Route id="aboutMe" path={routes[1].route} component={AboutMe} />
-              <Route
-                layoutId="main"
-                id="main"
-                path={routes[0].route}
-                component={Main}
-              />
+              <Route id="main" path={routes[0].route} component={Main} />
             </Switch>
           </AnimatePresence>
         </motion.div>
+        <Footer />
       </AnimateSharedLayout>
-      <Footer />
     </>
   );
 }

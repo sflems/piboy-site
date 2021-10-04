@@ -54,17 +54,15 @@ export const variants = {
   containers: {
     hidden: {
       opacity: 0,
-      height: "100%",
     },
     visible: {
       opacity: 1,
       transition: {
+        duration: 0.4,
         delayChildren: 0.5,
         staggerChildren: 0.5,
         ease: "easeInOut",
-        type: "spring",
-        stiffness: 300,
-        damping: 30
+        type: "tween",
       },
     },
   },
@@ -93,7 +91,7 @@ export const variants = {
         type: "spring",
       },
     },
-    exit: { opacity: 0 }
+    exit: { opacity: 0 , transition: { when: "beforeChildren"}}
   },
   writer: {
     sentence: {

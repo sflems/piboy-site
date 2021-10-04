@@ -66,6 +66,7 @@ html {
     max-width: 100%;
     flex-grow: 1 !important;
     flex-direction: column;
+    margin-bottom: -3px !important;
   }
 
   section {
@@ -99,3 +100,9 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+  /* For Spacers */
+  .flip {
+    transform: rotate(180deg);
+  }
+  

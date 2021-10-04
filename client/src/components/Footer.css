@@ -1,3 +1,7 @@
+footer > * {
+    z-index: 1;
+}
+
 .chevron {
     overflow: clip;
     box-shadow: none;
