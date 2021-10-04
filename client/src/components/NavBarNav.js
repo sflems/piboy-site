@@ -34,8 +34,7 @@ const NavBarNav = ({ isSticky, setIsSticky, scrolled }) => {
           id="navbarText"
           className={
             "collapse navbar-collapse justify-content-end " +
-            (isSticky && "show") +
-            (!scrolled && " collapse")
+            (isSticky ? " show " : "")
           }
         >
           <AnimateSharedLayout type="crossfade">

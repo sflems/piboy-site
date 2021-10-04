@@ -7,12 +7,14 @@ import AboutMe from "./components/AboutMe.js";
 import Main from "./components/Main.js";
 import Footer from "./components/Footer.js";
 import NavBar from "./components/NavBar.js";
+import ContactModal from "./components/ContactModal.js";
 
 function App() {
   const location = useLocation();
   return (
     <>
       <AnimateSharedLayout type="crossfade">
+        <ContactModal />
         <motion.div
           variants={variants.containers}
           initial={false}
