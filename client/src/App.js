@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { routes, variants } from "./Constants.jsx";
@@ -11,10 +11,12 @@ import ContactModal from "./components/ContactModal.js";
 
 function App() {
   const location = useLocation();
+  const [modalToggled, setModalToggled] = useState(true);
+  
   return (
     <>
       <AnimateSharedLayout type="crossfade">
-        <ContactModal />
+        <ContactModal modalToggled={modalToggled} setModalToggled={setModalToggled}/>
         <motion.div
           variants={variants.containers}
           initial={false}

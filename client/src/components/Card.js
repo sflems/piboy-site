@@ -1,7 +1,6 @@
 import "./Card.css";
 
 const Card = ({ title, text, icon, buttonText }, props) => {
-  console.log(icon);
   const Icon = icon;
   return (
     <div
