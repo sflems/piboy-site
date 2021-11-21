@@ -59,7 +59,7 @@ const writer = {
 const AboutMe = (props) => {
   const [wwd, cycleWwd] = useCycle(...services);
   return (
-    <motion.main layoutID="about" className="m-0 p-0">
+    <motion.main layoutID="about" className="m-0 p-0 text-center">
       <motion.section
         variants={variants.pages}
         initial="hidden"

@@ -7,10 +7,6 @@ export const routes = [
         route: "/about",
         name: "About"
     },
-    {
-        route: "/contact",
-        name: "Contact"
-    },
 ]
 
 export const services = [

@@ -5,7 +5,7 @@ import NavBarNav from "./NavBarNav";
 import { motion } from "framer-motion";
 import { variants } from "../Constants";
 
-const NavBar = () => {
+const NavBar = ({setModalToggled}) => {
   const [scrolled, setScrolled] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
@@ -32,15 +32,17 @@ const NavBar = () => {
         opacity: 0,
       }}
       id="navbar"
-      className={"m-0 p-0 " + (isSticky && "sticky-top")}
+      className={"m-0 p-0 text-center " + (isSticky && "sticky-top")}
     >
       <NavBarNav
         isSticky={isSticky}
         setIsSticky={setIsSticky}
         scrolled={scrolled}
+        setModalToggled={setModalToggled}
       />
       <Spacer spacerId="0" className=" mt-n1 bg-transparent flip" />
       <motion.button
+        id="navToggle"
         initial={{ x: 0, opacity: 1 }}
         animate={
           scrolled

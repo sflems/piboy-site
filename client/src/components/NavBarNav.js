@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
-import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { routes, variants } from "../Constants";
 import LogoSVG from "../media/logo.svg";
 import "./NavBar.css";
 
-const NavBarNav = ({ isSticky, setIsSticky, scrolled }) => {
+const NavBarNav = ({ isSticky, setIsSticky, scrolled, setModalToggled }) => {
   const scrollToTop = scroll.scrollToTop;
 
   const handleCollapse = () => {
@@ -37,43 +37,60 @@ const NavBarNav = ({ isSticky, setIsSticky, scrolled }) => {
             (isSticky ? " show " : "")
           }
         >
-          <AnimateSharedLayout type="crossfade">
-            <AnimatePresence layout exitBeforeEnter>
-              <motion.ul
+          <AnimatePresence layout exitBeforeEnter>
+            <motion.ul
+              layout
+              variants={variants.containers}
+              className="navbar-nav mb-2 mb-md-0 me-3"
+            >
+              {routes.map((route, key) => {
+                return (
+                  <motion.li
+                    key={`route-${key}`}
+                    className="nav-item"
+                    layout
+                    variants={variants.containers}
+                    onClick={handleCollapse}
+                  >
+                    <Link
+                      className="nav-link"
+                      key={`routeLink-${key}`}
+                      to={route.route}
+                    >
+                      <motion.div
+                        className="link-success"
+                        variants={variants.buttons}
+                        animate="visible"
+                        whileHover="hover"
+                        whileTap="tap"
+                      >
+                        {route.name}
+                      </motion.div>
+                    </Link>
+                  </motion.li>
+                );
+              })}
+              <motion.li
+                className="nav-item nav-contact"
                 layout
                 variants={variants.containers}
-                className="navbar-nav mb-2 mb-md-0 me-3"
+                onClick={handleCollapse}
               >
-                {routes.map((route, key) => {
-                  return (
-                    <motion.li
-                      key={`route-${key}`}
-                      className="nav-item"
-                      layout
-                      variants={variants.containers}
-                      onClick={handleCollapse}
-                    >
-                      <Link
-                        className="nav-link"
-                        key={`routeLink-${key}`}
-                        to={route.route}
-                      >
-                        <motion.div
-                          className="link-success"
-                          variants={variants.buttons}
-                          animate="visible"
-                          whileHover="hover"
-                          whileTap="tap"
-                        >
-                          {route.name}
-                        </motion.div>
-                      </Link>
-                    </motion.li>
-                  );
-                })}
-              </motion.ul>
-            </AnimatePresence>
-          </AnimateSharedLayout>
+                <div className="nav-link">
+                  <motion.div
+                    className="link-success"
+                    onClick={() => setModalToggled(true)}
+                    variants={variants.buttons}
+                    animate="visible"
+                    whileHover="hover"
+                    whileTap="tap"
+                  >
+                    Contact
+                  </motion.div>
+                </div>
+              </motion.li>
+            </motion.ul>
+          </AnimatePresence>
         </motion.div>
       </motion.div>
     </motion.nav>

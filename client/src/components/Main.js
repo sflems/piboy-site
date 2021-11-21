@@ -30,12 +30,12 @@ const container = {
   },
 };
 
-const Main = (props) => {
+const Main = ({id, setModalToggled}) => {
   var greeting = `Hello, my name's Scott. I'm the lead developer and graphic designer with Piboy Technical Solutions.`;
 
   return (
     <motion.main
-      className="m-0 p-0 mb-4"
+      className="m-0 p-0 mb-4 text-center"
       variants={variants.pages}
       initial="hidden"
       animate="visible"
@@ -47,7 +47,7 @@ const Main = (props) => {
         initial="hidden"
         animate="visible"
         exit="exit"
-        id={props.id}
+        id={id}
         className="row m-0 p-0"
       >
         <motion.div
@@ -125,10 +125,11 @@ const Main = (props) => {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="row flex-md-row align-items-center bg-primary g-5 p-2 p-md-4 m-0 border-top section-border border-info card glass shadow"
+        className="row flex-md-row align-items-center bg-primary g-5 p-2 p-md-4 m-0 border-top section-border border-info card shadow"
       >
         <motion.div variants={container} className="col-auto m-0 p-0 px-md-3">
           <Card
+            className="glass"
             title="Website Development &amp; Hosting"
             icon={LaptopIcon}
             text="The future revolves around the web and connectivity. Together we'll brainstorm a game plan, the rest is coded by our
@@ -202,7 +203,7 @@ const Main = (props) => {
             experienced development and techno-savvy team has got your back.
           </p>
           <div className="d-grid gap-2 d-md-flex justify-content-center">
-            <a href="mailto:scott@piboy.ca?subject=Inquiry for the Piboy Team">
+            <div>
               <motion.button
                 variants={variants.buttons}
                 initial="visible"
@@ -211,10 +212,11 @@ const Main = (props) => {
                 whileTap="tap"
                 type="button"
                 className="btn btn-info text-white btn-lg px-4 me-md-2 rounded-0 shadow"
+                onClick={() => setModalToggled(true)}
               >
                 Contact Us
               </motion.button>
-            </a>
+            </div>
           </div>
         </motion.div>
       </motion.section>

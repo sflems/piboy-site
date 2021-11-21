@@ -1,0 +1,15 @@
+#contactModal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000cc;
+  z-index: 1000;
+  overflow: scroll;
+}
+
+.input-group-text {
+  min-width: 6em;
+  justify-content: center;
+}

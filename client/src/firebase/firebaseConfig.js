@@ -35,5 +35,4 @@ const getEmails = async () => {
   return emailsList;
 };
 
-
 export { db, getEmails };

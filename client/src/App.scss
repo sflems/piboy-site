@@ -77,9 +77,17 @@ html {
   }
 
   .glass {
-    background-color: #0003 !important;
+    background-color: rgba(0, 0, 0, 0.7);
     border-style: none;
     border-radius: 0;
+  }
+
+  .blur {
+    filter: blur(4px);
+    -o-filter:blur(4px);
+    -ms-filter:blur(4px);
+    -moz-filter:blur(4px);
+    -webkit-filter:blur(4px);
   }
 
   .card {
