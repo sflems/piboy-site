@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
 import "firebase/firestore";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore, getDocs, collection } from "firebase/firestore";
 
@@ -25,13 +26,28 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 // eslint-disable-next-line no-unused-vars
 const analytics = getAnalytics(app);
+
+// Pass your reCAPTCHA v3 site key (public key) to activate(). Make sure this
+// key is the counterpart to the secret key you set in the Firebase console.
+// eslint-disable-next-line no-unused-vars
+const appCheck = initializeAppCheck(app, {
+  provider: new ReCaptchaV3Provider("6LcSpE4dAAAAABm4c31qfHodx8c3PGKNTr6Z3Ekw"),
+
+  // Optional argument. If true, the SDK automatically refreshes App Check
+  // tokens as needed.
+  isTokenAutoRefreshEnabled: true,
+});
+
+// Init DB
 const db = getFirestore(app);
 
 const getEmails = async () => {
   const emailsCol = collection(db, "emails");
   const emailsSnapshot = await getDocs(emailsCol);
-  const emailsList = []
-  emailsSnapshot.docs.map((doc) => console.log(doc.data()) && emailsList.push(doc.data()));
+  const emailsList = [];
+  emailsSnapshot.docs.map(
+    (doc) => console.log(doc.data()) && emailsList.push(doc.data())
+  );
   return emailsList;
 };
 
