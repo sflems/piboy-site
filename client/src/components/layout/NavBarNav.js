@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 import { AnimatePresence, motion } from "framer-motion";
-import { routes, variants } from "../Constants";
-import LogoSVG from "../media/logo.svg";
+import { variants } from "../../Constants";
+import LogoSVG from "../../media/logo.svg";
 import "./NavBar.css";
 
 const NavBarNav = ({ isSticky, setIsSticky, scrolled, setModalToggled }) => {
@@ -43,33 +43,69 @@ const NavBarNav = ({ isSticky, setIsSticky, scrolled, setModalToggled }) => {
               variants={variants.containers}
               className="navbar-nav mb-2 mb-md-0 me-3"
             >
-              {routes.map((route, key) => {
-                return (
-                  <motion.li
-                    key={`route-${key}`}
-                    className="nav-item"
-                    layout
-                    variants={variants.containers}
-                    onClick={handleCollapse}
+              <motion.li
+                className="nav-item"
+                layout
+                variants={variants.containers}
+                onClick={handleCollapse}
+              >
+                <Link
+                  className="nav-link"
+                  to="/"
+                >
+                  <motion.div
+                    className="link-success"
+                    variants={variants.buttons}
+                    animate="visible"
+                    whileHover="hover"
+                    whileTap="tap"
                   >
-                    <Link
-                      className="nav-link"
-                      key={`routeLink-${key}`}
-                      to={route.route}
-                    >
-                      <motion.div
-                        className="link-success"
-                        variants={variants.buttons}
-                        animate="visible"
-                        whileHover="hover"
-                        whileTap="tap"
-                      >
-                        {route.name}
-                      </motion.div>
-                    </Link>
-                  </motion.li>
-                );
-              })}
+                    Home
+                  </motion.div>
+                </Link>
+              </motion.li>
+              <motion.li
+                className="nav-item"
+                layout
+                variants={variants.containers}
+                onClick={handleCollapse}
+              >
+                <Link
+                  className="nav-link"
+                  to="/about"
+                >
+                  <motion.div
+                    className="link-success"
+                    variants={variants.buttons}
+                    animate="visible"
+                    whileHover="hover"
+                    whileTap="tap"
+                  >
+                    About
+                  </motion.div>
+                </Link>
+              </motion.li>
+              <motion.li
+                className="nav-item"
+                layout
+                variants={variants.containers}
+                onClick={handleCollapse}
+              >
+                <Link
+                  className="nav-link"
+                  to="/projects"
+                >
+                  <motion.div
+                    className="link-success"
+                    variants={variants.buttons}
+                    animate="visible"
+                    whileHover="hover"
+                    whileTap="tap"
+                  >
+                    Projects
+                  </motion.div>
+                </Link>
+              </motion.li>
               <motion.li
                 className="nav-item nav-contact"
                 layout

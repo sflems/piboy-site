@@ -1,5 +1,5 @@
 import "./ContactModal.css";
-import { db } from "../firebase/firebaseConfig";
+import { db } from "../../firebase/firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 

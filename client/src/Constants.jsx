@@ -1,14 +1,3 @@
-export const routes = [ 
-    {
-        route: "/",
-        name: "Home"
-    },
-    {
-        route: "/about",
-        name: "About"
-    },
-]
-
 export const services = [
   "API & Web Design",
   "Social Media & Marketing",

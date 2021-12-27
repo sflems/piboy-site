@@ -1,8 +1,8 @@
 import { animateScroll as scroll } from "react-scroll";
 import { motion } from "framer-motion";
-import LogoSVG from "../media/logo.svg";
+import LogoSVG from "../../media/logo.svg";
 import Spacer from "./Spacer.js";
-import { variants } from "../Constants";
+import { variants } from "../../Constants";
 
 import "./Footer.css";
 

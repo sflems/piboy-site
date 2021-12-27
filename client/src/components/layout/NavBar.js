@@ -3,7 +3,7 @@ import "./NavBar.css";
 import Spacer from "./Spacer";
 import NavBarNav from "./NavBarNav";
 import { motion } from "framer-motion";
-import { variants } from "../Constants";
+import { variants } from "../../Constants";
 
 const NavBar = ({setModalToggled}) => {
   const [scrolled, setScrolled] = useState(false);

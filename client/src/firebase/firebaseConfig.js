@@ -32,7 +32,6 @@ const analytics = getAnalytics(app);
 // eslint-disable-next-line no-unused-vars
 const appCheck = initializeAppCheck(app, {
   provider: new ReCaptchaV3Provider("6LcSpE4dAAAAABm4c31qfHodx8c3PGKNTr6Z3Ekw"),
-
   // Optional argument. If true, the SDK automatically refreshes App Check
   // tokens as needed.
   isTokenAutoRefreshEnabled: true,
