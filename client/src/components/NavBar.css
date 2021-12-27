@@ -1,8 +1,0 @@
-#NavBar {
-  position: relative;
-  z-index: 1;
-}
-
-.nav-link:hover {
-  cursor: pointer;
-}

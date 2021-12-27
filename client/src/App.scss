@@ -1,21 +1,32 @@
 /* The following block can be included in a custom.scss */
-
 /* make the customizations */
 $enable-negative-margins: true;
 
 $primary: #277da1;
-$info: #38ab8b;
+$info: #00ac9f;
 $success: #add785;
 $green: #98cd67;
 $warning: #fac751;
+$danger: #ed2627;
 $dark: #212529;
 
 
+$offcanvas-vertical-height: 10vh;
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
 
 /* custom css below */
+@media (min-width: 768px) { 
+  html {
+    font-size: 110%;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
 .blue {
     background: $primary !important;
   }
@@ -36,10 +47,6 @@ $dark: #212529;
     background: #f3733c !important;
   }
   
-  .lead {
-    padding-bottom: 3em;
-  }
-  
   .navLogo {
     width: 56px;
     height: 56px;
@@ -53,3 +60,57 @@ $dark: #212529;
   .chevron:active {
     background-color: $primary !important;
   }
+
+  div#contentWrapper {
+    width: 100vw;
+    max-width: 100%;
+    flex-grow: 1 !important;
+    flex-direction: column;
+    margin-bottom: -3px !important;
+  }
+
+  section {
+    overflow-x: clip;
+    z-index: 1;
+    align-content: baseline;
+    justify-content: center;
+  }
+
+  .glass {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-style: none;
+    border-radius: 0;
+  }
+
+  .blur {
+    filter: blur(4px);
+    -o-filter:blur(4px);
+    -ms-filter:blur(4px);
+    -moz-filter:blur(4px);
+    -webkit-filter:blur(4px);
+  }
+
+  .card {
+    border-radius: 0em;
+  }
+
+  .hero2 {
+    border-radius: 2em;
+  }
+
+  .card-group > .card {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .background-img {
+    background-image: url("./media/HillsandMountains-sunset.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* For Spacers */
+  .flip {
+    transform: rotate(180deg);
+  }
+  

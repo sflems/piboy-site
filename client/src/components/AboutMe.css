@@ -1,4 +1,12 @@
 #AboutMe {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.glass-rounded {
+  border-radius: 1em;
+}
+
+.img-rounded {
+  border-radius: 1em;
 }

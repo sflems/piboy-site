@@ -1,19 +1,17 @@
-main {
-  overflow-x: clip;
+.motionLogo {
+  width: 100%;
+  max-width: 400px;
 }
 
-@media (min-width: 992px) {
-  #main2 {
-    scroll-margin-top: 5rem;
-  }
+.hero-img {
+  max-height: 40vh;
+  min-height:16em;
 }
 
-@media (max-width: 991px) {
-  #main2 {
-    scroll-margin-top: 0rem !important;
-  }
+.border-top.section-border {
+  border-top-width: 0.25em !important;
 }
 
-.hidden {
-  visibility: hidden !important;
+.space-cat {
+  scale: 1.25;
 }

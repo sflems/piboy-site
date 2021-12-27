@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html lang="en" class="container-fluid p-0 w-100 h-100 bg-dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Primary Meta Tags -->
+    <title>
+      Piboy Technical Solutions | Providing simple solutions to life's technical
+      problems.
+    </title>
+    <meta
+      name="title"
+      content="Piboy Technical Solutions | Providing simple solutions to life's technical problems."
+    />
+    <meta
+      name="description"
+      content="Piboy provides branding, digital media design, custom applications, e-commerce solutions, WordPress &amp; Django website management, and  technical support services to various business clients."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%PUBLIC_URL%/" />
+    <meta
+      property="og:title"
+      content="Piboy Technical Solutions | Providing simple solutions to life's technical problems."
+    />
+    <meta
+      property="og:description"
+      content="Piboy provides branding, digital media design, custom applications, e-commerce solutions, WordPress &amp; Django website management, and  technical support services to various business clients."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/full-logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="%PUBLIC_URL%/" />
+    <meta
+      property="twitter:title"
+      content="Piboy Technical Solutions | Providing simple solutions to life's technical problems."
+    />
+    <meta
+      property="twitter:description"
+      content="Piboy provides branding, digital media design, custom applications, e-commerce solutions, WordPress &amp; Django website management, and  technical support services to various business clients."
+    />
+    <meta property="twitter:image" content="%PUBLIC_URL%/full-logo.png" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4ED081T7WJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-4ED081T7WJ");
+    </script>
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
+  <body class="container-fluid m-0 p-0 h-100 text-white bg-dark">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root" class="cover-container d-flex w-100 h-100 p-0 mx-auto flex-column"></div>
+    <div
+      id="root"
+      class="container-fluid d-flex w-100 h-100 p-0 mx-auto flex-column"
+    ></div>
   </body>
 </html>
