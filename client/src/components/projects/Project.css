@@ -5,3 +5,7 @@
 .img-rounded {
   border-radius: 1em;
 }
+
+ul {
+  list-style: none;
+}

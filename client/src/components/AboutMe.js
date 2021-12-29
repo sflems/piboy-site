@@ -1,24 +1,7 @@
 import { motion, useCycle } from "framer-motion";
-import { variants, services } from "../Constants";
+import { container, variants, SERVICES } from "../Constants";
 import "./AboutMe.css";
 import bgSVG from "../media/HillsandMountains-sunset.svg";
-
-const container = {
-  hidden: {
-    opacity: 0,
-    height: "100%",
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-      ease: "easeInOut",
-      type: "spring",
-      stiffness: 100,
-      damping: 30,
-    },
-  },
-};
 
 const writer = {
   sentence: {
@@ -57,9 +40,9 @@ const writer = {
 };
 
 const AboutMe = (props) => {
-  const [wwd, cycleWwd] = useCycle(...services);
+  const [wwd, cycleWwd] = useCycle(...SERVICES);
   return (
-    <motion.main layoutID="about" className="m-0 p-0 text-center">
+    <motion.main layoutId="about" className="m-0 p-0 text-center">
       <motion.section
         variants={variants.pages}
         initial="hidden"

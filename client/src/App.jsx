@@ -5,6 +5,8 @@ import AboutMe from "./components/AboutMe";
 import Layout from "./components/layout/Layout";
 import Main from "./components/Main";
 import Privacy from "./components/Privacy";
+import Project from "./components/projects/Project";
+import ProjectsIndex from "./components/projects/ProjectsIndex";
 
 function App() {
   const [modalToggled, setModalToggled] = useState(false);
@@ -24,9 +26,14 @@ function App() {
   let routes = useRoutes([
     {
       path: "/",
-      element: <Layout modalToggled={modalToggled} setModalToggled={setModalToggled}/>,
+      element: (
+        <Layout modalToggled={modalToggled} setModalToggled={setModalToggled} />
+      ),
       children: [
-        { index: true, element: <Main id="main" setModalToggled={setModalToggled} /> },
+        {
+          index: true,
+          element: <Main id="main" setModalToggled={setModalToggled} />,
+        },
         {
           path: "/about",
           element: <AboutMe />,
@@ -41,27 +48,22 @@ function App() {
         },
         {
           path: "/projects",
+          element: <ProjectsIndex />,
           name: "Projects",
           children: [
             {
-              path: "/projects/fcc",
-              name: "Free Code Camp",
-              children: [
-                {
-                  path: "/projects/fcc/fel",
-                  name: "Front End Development Libraries",
-                },
-              ],
-            },
-            {
-              path: "/projects/personal",
-              name: "Personal Projects",
-            },
-          ],
+              path: "/projects/:slug",
+              element: <Project />,
+              name: "Projects"
+            }
+          ]
         },
-        { path: "*", element: <Main id="main" setModalToggled={setModalToggled} />  }
-      ]
-    }
+        {
+          path: "*",
+          element: <Main id="main" setModalToggled={setModalToggled} />,
+        },
+      ],
+    },
   ]);
 
   return <>{routes}</>;
