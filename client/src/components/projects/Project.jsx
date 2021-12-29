@@ -1,74 +1,79 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { PROJECTS, variants } from "../../Constants";
+import { baseGhUrl, PROJECTS, variants } from "../../Constants";
 import "./Project.css";
 import { useParams } from "react-router";
 
-const writer = {
-  sentence: {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.03,
-        when: "beforeChildren",
-      },
-    },
-  },
-  letter: {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        ease: "easeInOut",
-        duration: 1,
-        repeat: 1,
-        repeatType: "reverse",
-      },
-    },
-  },
-  letterTwo: {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-      },
-    },
-  },
-};
-
 export default function Projects(props) {
+  const [projectData, setProjectData] = useState(null);
   let { slug } = useParams();
-  let project = PROJECTS.find(element => element.slug === slug)
+  let project = PROJECTS.find((element) => slug === element.slug);
+
+  useEffect(() => {
+    if (project != null && project.fetch === true) {
+      axios
+        .get(baseGhUrl + "repos/sflems/" + slug)
+        .then((response) => {
+          setProjectData(response.data);
+        })
+        .catch(function (error) {
+          setProjectData(null);
+          console.log("Fetch found no more info.");
+        });
+    }
+  }, [project, slug]);
 
   return (
-    <motion.main layoutId="projects" className="m-0 p-0 text-center">
+    <motion.main className="m-0 p-0 text-center">
       <motion.section
+        layout
         variants={variants.pages}
         initial="hidden"
         animate="visible"
         exit="exit"
         id="projects-index"
         className={
-          "container-lg text-white m-auto p-3" +
+          "container-lg text-white text-center m-auto p-3" +
           (props.className ? props.className : "")
         }
       >
         <motion.h1
           className=""
-          variants={writer.letterTwo}
+          variants={variants.writerTwo.letterTwo}
           animate={{
-            ...writer.letterTwo.visible,
+            ...variants.writerTwo.letterTwo.visible,
             transition: { duration: 0.2, delay: 0.2 },
           }}
           initial="hidden"
         >
-          {project.name}
+          {project && project.name}
+          {!project && "Project not found."}
         </motion.h1>
-        {project.element}
+        <motion.p className="mb-0">
+          {projectData ? projectData.description : ""}
+        </motion.p>
+        {project && project.element}
       </motion.section>
+      {project && project.ghUrl && (
+        <a
+          href={project.ghUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nav-link"
+        >
+          <motion.div
+            className="link-success mb-2"
+            variants={variants.buttons}
+            animate="visible"
+            whileHover="hoverTopButton"
+            whileTap="tap"
+            id="project-link"
+          >
+            View Project on GitHub
+          </motion.div>
+        </a>
+      )}
     </motion.main>
   );
-};
+}

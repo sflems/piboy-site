@@ -27,6 +27,7 @@ const NavBar = ({setModalToggled}) => {
 
   return (
     <motion.div
+      layout
       variants={variants.containers}
       exit={{
         opacity: 0,

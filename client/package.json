@@ -51,7 +51,7 @@
     ]
   },
   "devDependencies": {
-    "yarn-audit-fix": "^9.0.4",
-    "immer": "^9.0.6"
+    "immer": "^9.0.6",
+    "yarn-audit-fix": "^9.0.4"
   }
 }

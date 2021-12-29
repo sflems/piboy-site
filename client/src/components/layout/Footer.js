@@ -11,7 +11,12 @@ var d = new Date();
 const Footer = (props) => {
   const scrollToTop = scroll.scrollToTop;
   return (
-    <>
+    <motion.div
+    layoutId="footer"
+    variants={variants.containers}
+    initial="hidden"
+    animate="visible"
+    exit="exit">
       <Spacer spacerId="1" className="mt-n3" />
       <footer
         id="footer"
@@ -55,7 +60,7 @@ const Footer = (props) => {
           </motion.svg>
         </div>
       </footer>
-    </>
+    </motion.div>
   );
 };
 

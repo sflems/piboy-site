@@ -3,42 +3,6 @@ import { container, variants, SERVICES } from "../Constants";
 import "./AboutMe.css";
 import bgSVG from "../media/HillsandMountains-sunset.svg";
 
-const writer = {
-  sentence: {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.03,
-        when: "beforeChildren",
-      },
-    },
-  },
-  letter: {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        ease: "easeInOut",
-        duration: 1,
-        repeat: 1,
-        repeatType: "reverse",
-      },
-    },
-  },
-  letterTwo: {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-      },
-    },
-  },
-};
-
 const AboutMe = (props) => {
   const [wwd, cycleWwd] = useCycle(...SERVICES);
   return (
@@ -62,9 +26,9 @@ const AboutMe = (props) => {
         >
           <motion.h1
             className=""
-            variants={writer.letterTwo}
+            variants={variants.writerThree.letterTwo}
             animate={{
-              ...writer.letterTwo.visible,
+              ...variants.writerThree.letterTwo.visible,
               transition: { duration: 0.2, delay: 0.2 },
             }}
             initial="hidden"
@@ -86,7 +50,7 @@ const AboutMe = (props) => {
           >
             <motion.p
               key={wwd}
-              variants={writer.sentence}
+              variants={variants.writerThree.sentence}
               className="lead my-auto p-0"
               onAnimationComplete={() => {
                 cycleWwd();
@@ -97,7 +61,7 @@ const AboutMe = (props) => {
                   return (
                     <motion.span
                       key={"char" + index}
-                      variants={writer.letter}
+                      variants={variants.writerThree.letter}
                       className="fs-3"
                     >
                       {char}
@@ -136,14 +100,14 @@ const AboutMe = (props) => {
           >
             <motion.p
               className="text-start lead text-success"
-              variants={writer.sentence}
+              variants={variants.writerThree.sentence}
             >
               {"OUR VALUES: ".split("").map((char, index) => {
                 return (
                   <motion.strong
                     key={"char" + index}
                     className="fs-3"
-                    variants={writer.letterTwo}
+                    variants={variants.writerThree.letterTwo}
                   >
                     {char}
                   </motion.strong>
@@ -155,7 +119,7 @@ const AboutMe = (props) => {
                   return (
                     <motion.strong
                       key={"char" + index}
-                      variants={writer.letterTwo}
+                      variants={variants.writerThree.letterTwo}
                     >
                       {char}
                     </motion.strong>
@@ -169,14 +133,14 @@ const AboutMe = (props) => {
             </motion.p>
             <motion.p
               className="text-start lead text-warning"
-              variants={writer.sentence}
+              variants={variants.writerThree.sentence}
             >
               {"OUR MISSION: ".split("").map((char, index) => {
                 return (
                   <motion.strong
                     key={"char" + index}
                     className="fs-3"
-                    variants={writer.letterTwo}
+                    variants={variants.writerThree.letterTwo}
                   >
                     {char}
                   </motion.strong>
@@ -188,7 +152,7 @@ const AboutMe = (props) => {
                   return (
                     <motion.strong
                       key={"char" + index}
-                      variants={writer.letterTwo}
+                      variants={variants.writerThree.letterTwo}
                     >
                       {char}
                     </motion.strong>

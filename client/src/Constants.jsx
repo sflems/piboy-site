@@ -1,4 +1,6 @@
-import RandomQuote from "./components/fcc/RandomQuote"
+import RandomQuote from "./components/fcc/RandomQuote";
+
+export const baseGhUrl = "https://api.github.com/";
 
 export const SERVICES = [
   "API & Web Design",
@@ -6,39 +8,40 @@ export const SERVICES = [
   "Custom Integrated Solutions",
   "Web Hosting",
   "Wordpress Management",
-  "UI/UX Design"
-]
+  "UI/UX Design",
+];
 
 export const PROJECTS = [
   {
     id: 1,
     name: "Random Quote Machine",
     slug: "random-quote-machine",
-    source: "Free Code Camp",
-    link: "https://piboy.ca/projects/random-quote-machine",
-    ghUrl: null,
+    category: "Free Code Camp",
+    ghUrl:
+      "https://github.com/sflems/piboy-site/blob/update-deps%2Brouter/client/src/components/fcc/RandomQuote.jsx",
     element: <RandomQuote />,
+    fetch: false,
   },
   {
     id: 0,
     name: "Markdown Previewer",
     slug: "markdown-previewer",
-    source: "Free Code Camp",
-    link: "https://piboy.ca/projects/markdown-previewer",
+    category: "Free Code Camp",
     ghUrl: null,
     element: null,
+    fetch: false,
   },
   {
     id: 2,
     name: "LED Scoreboard Manager",
-    slug: "led-scoreboard-manager",
-    source: "Personal",
-    link: "https://piboy.ca/projects/led-board-manager",
+    slug: "led-board-manager",
+    category: "Piboy",
+    desc: "",
     ghUrl: "https://github.com/sflems/led-board-manager",
     element: null,
+    fetch: true,
   },
-]
-
+];
 
 export const container = {
   hidden: {
@@ -86,6 +89,23 @@ export const variants = {
       },
     },
   },
+
+  containerMain: {
+    hidden: {
+      opacity: 0,
+      height: "100%",
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+        ease: "easeInOut",
+        type: "spring",
+        stiffness: 100,
+        damping: 30,
+      },
+    },
+  },
   containers: {
     hidden: {
       opacity: 0,
@@ -109,55 +129,126 @@ export const variants = {
     hoverTopButton: {
       scale: 1.1,
       originX: "50%",
-      originY:"50%"
+      originY: "50%",
     },
     hoverProjButton: {
       scale: 1.1,
       originX: 0,
-      originY: 0
+      originY: 0,
     },
     tap: {
       scale: 0.8,
     },
     tapTopButton: {
-      scale: 0.8
+      scale: 0.8,
     },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
-        duration:0.2,
+        duration: 0.2,
         ease: "easeIn",
         type: "spring",
       },
     },
-    exit: { opacity: 0 , transition: { when: "beforeChildren"}}
+    exit: { opacity: 0, transition: { when: "beforeChildren" } },
   },
   writer: {
     sentence: {
       hidden: { opacity: 1 },
       visible: {
-        opacity:1,
+        opacity: 1,
         transition: {
           delay: 0.5,
           staggerChildren: 0.03,
-          when: "beforeChildren"
+          when: "beforeChildren",
         },
       },
     },
     letter: {
-      hidden: { opacity:0, y:50 },
+      hidden: { opacity: 0, y: 50 },
       visible: {
         opacity: 1,
         y: 0,
       },
     },
-  }
+  },
+  writerTwo: {
+    sentence: {
+      hidden: { opacity: 1 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.03,
+          when: "beforeChildren",
+        },
+      },
+    },
+    letter: {
+      hidden: { opacity: 0, y: 50 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          ease: "easeInOut",
+          duration: 1,
+          repeat: 1,
+          repeatType: "reverse",
+        },
+      },
+    },
+    letterTwo: {
+      hidden: { opacity: 0, y: 50 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 1,
+        },
+      },
+    },
+  },
+  writerThree: {
+    sentence: {
+      hidden: { opacity: 1 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.03,
+          when: "beforeChildren",
+        },
+      },
+    },
+    letter: {
+      hidden: { opacity: 0, y: 50 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          ease: "easeInOut",
+          duration: 1,
+          repeat: 1,
+          repeatType: "reverse",
+        },
+      },
+    },
+    letterTwo: {
+      hidden: { opacity: 0, y: 50 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 1,
+        },
+      },
+    },
+  },
 };
 
 export const QUOTES = [
   {
-    text: "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    text:
+      "Genius is one percent inspiration and ninety-nine percent perspiration.",
     author: "Thomas Edison",
   },
   {
@@ -417,7 +508,8 @@ export const QUOTES = [
     author: "African proverb",
   },
   {
-    text: "Real magic in relationships means an absence of judgement of others.",
+    text:
+      "Real magic in relationships means an absence of judgement of others.",
     author: "Wayne Dyer",
   },
   {
@@ -765,7 +857,8 @@ export const QUOTES = [
     author: "Confucius",
   },
   {
-    text: "Someone remembers, someone cares; your name is whispered in someone's prayers.",
+    text:
+      "Someone remembers, someone cares; your name is whispered in someone's prayers.",
     author: "Unknown",
   },
   {
@@ -781,7 +874,8 @@ export const QUOTES = [
     author: "Unknown",
   },
   {
-    text: "Whatever we expect with confidence becomes our own self-fulfilling prophecy.",
+    text:
+      "Whatever we expect with confidence becomes our own self-fulfilling prophecy.",
     author: "Brian Tracy",
   },
   {
@@ -1089,7 +1183,8 @@ export const QUOTES = [
     author: "Lao Tzu",
   },
   {
-    text: "Efficiency is doing things right; effectiveness is doing the right things.",
+    text:
+      "Efficiency is doing things right; effectiveness is doing the right things.",
     author: "Peter Drucker",
   },
   {
@@ -1181,7 +1276,8 @@ export const QUOTES = [
     author: "Ralph Emerson",
   },
   {
-    text: "All seasons are beautiful for the person who carries happiness within.",
+    text:
+      "All seasons are beautiful for the person who carries happiness within.",
     author: "Horace Friess",
   },
   {
@@ -1201,71 +1297,88 @@ export const QUOTES = [
     author: "Lauren Bacall",
   },
   {
-    text: "The beginning of knowledge is the discovery of something we do not understand.",
+    text:
+      "The beginning of knowledge is the discovery of something we do not understand.",
     author: "Frank Herbert",
   },
   {
-    text: "Love doesn't make the world go round, love is what makes the ride worthwhile.",
+    text:
+      "Love doesn't make the world go round, love is what makes the ride worthwhile.",
     author: "Elizabeth Browning",
   },
   {
-    text: "Whenever you have eliminated the impossible, whatever remains, however improbable, must be the truth.",
+    text:
+      "Whenever you have eliminated the impossible, whatever remains, however improbable, must be the truth.",
     author: "Arthur Conan Doyle",
   },
   {
-    text: "Good timber does not grow with ease; the stronger the wind, the stronger the trees.",
+    text:
+      "Good timber does not grow with ease; the stronger the wind, the stronger the trees.",
     author: "J. Willard Marriott",
   },
   {
-    text: "I believe that we are fundamentally the same and have the same basic potential.",
+    text:
+      "I believe that we are fundamentally the same and have the same basic potential.",
     author: "Dalai Lama",
   },
   {
-    text: "The winds and waves are always on the side of the ablest navigators.",
+    text:
+      "The winds and waves are always on the side of the ablest navigators.",
     author: "Edward Gibbon",
   },
   {
-    text: "The future belongs to those who believe in the beauty of their dreams.",
+    text:
+      "The future belongs to those who believe in the beauty of their dreams.",
     author: "Eleanor Roosevelt",
   },
   {
-    text: "To get something you never had, you have to do something you never did.",
+    text:
+      "To get something you never had, you have to do something you never did.",
     author: null,
   },
   {
-    text: "Be thankful when you don't know something for it gives you the opportunity to learn.",
+    text:
+      "Be thankful when you don't know something for it gives you the opportunity to learn.",
     author: null,
   },
   {
-    text: "Strength does not come from physical capacity. It comes from an indomitable will.",
+    text:
+      "Strength does not come from physical capacity. It comes from an indomitable will.",
     author: "Mahatma Gandhi",
   },
   {
-    text: "Each misfortune you encounter will carry in it the seed of tomorrows good luck.",
+    text:
+      "Each misfortune you encounter will carry in it the seed of tomorrows good luck.",
     author: "Og Mandino",
   },
   {
-    text: "To forgive is to set a prisoner free and realize that prisoner was you.",
+    text:
+      "To forgive is to set a prisoner free and realize that prisoner was you.",
     author: "Lewis B. Smedes",
   },
   {
-    text: "In separateness lies the world's great misery, in compassion lies the world's true strength.",
+    text:
+      "In separateness lies the world's great misery, in compassion lies the world's true strength.",
     author: "Buddha",
   },
   {
-    text: "By believing passionately in something that does not yet exist, we create it.",
+    text:
+      "By believing passionately in something that does not yet exist, we create it.",
     author: "Nikos Kazantzakis",
   },
   {
-    text: "Letting go is not the end of the world; it is the beginning of a new life.",
+    text:
+      "Letting go is not the end of the world; it is the beginning of a new life.",
     author: null,
   },
   {
-    text: "All the great performers I have worked with are fuelled by a personal dream.",
+    text:
+      "All the great performers I have worked with are fuelled by a personal dream.",
     author: "John Eliot",
   },
   {
-    text: "One of the advantages of being disorderly is that one is constantly making exciting discoveries.",
+    text:
+      "One of the advantages of being disorderly is that one is constantly making exciting discoveries.",
     author: "A. A. Milne",
   },
   {
@@ -1273,19 +1386,23 @@ export const QUOTES = [
     author: "Marie Curie",
   },
   {
-    text: "Begin at once to live and count each separate day as a separate life.",
+    text:
+      "Begin at once to live and count each separate day as a separate life.",
     author: "Seneca",
   },
   {
-    text: "If you don't know where you are going, you will probably end up somewhere else.",
+    text:
+      "If you don't know where you are going, you will probably end up somewhere else.",
     author: "Lawrence Peter",
   },
   {
-    text: "It is not so important to know everything as to appreciate what we learn.",
+    text:
+      "It is not so important to know everything as to appreciate what we learn.",
     author: "Hannah More",
   },
   {
-    text: "The bird of paradise alights only upon the hand that does not grasp.",
+    text:
+      "The bird of paradise alights only upon the hand that does not grasp.",
     author: "John Berry",
   },
   {
@@ -1293,19 +1410,23 @@ export const QUOTES = [
     author: "William Yeats",
   },
   {
-    text: "Practice yourself, for heavens sake in little things, and then proceed to greater.",
+    text:
+      "Practice yourself, for heavens sake in little things, and then proceed to greater.",
     author: "Epictetus",
   },
   {
-    text: "If one does not know to which port is sailing, no wind is favorable.",
+    text:
+      "If one does not know to which port is sailing, no wind is favorable.",
     author: "Seneca",
   },
   {
-    text: "Our greatest glory is not in never failing but rising everytime we fall.",
+    text:
+      "Our greatest glory is not in never failing but rising everytime we fall.",
     author: "Confucious",
   },
   {
-    text: "Being right is highly overrated. Even a stopped clock is right twice a day.",
+    text:
+      "Being right is highly overrated. Even a stopped clock is right twice a day.",
     author: "Unknown",
   },
   {
@@ -1321,11 +1442,13 @@ export const QUOTES = [
     author: "Marie Curie",
   },
   {
-    text: "Successful people ask better questions, and as a result, they get better answers.",
+    text:
+      "Successful people ask better questions, and as a result, they get better answers.",
     author: "Tony Robbins",
   },
   {
-    text: "Love is not blind; it simply enables one to see things others fail to see.",
+    text:
+      "Love is not blind; it simply enables one to see things others fail to see.",
     author: "Johnny Depp",
   },
   {
@@ -1333,7 +1456,8 @@ export const QUOTES = [
     author: "Anne Schaef",
   },
   {
-    text: "I think somehow we learn who we really are and then live with that decision.",
+    text:
+      "I think somehow we learn who we really are and then live with that decision.",
     author: "Eleanor Roosevelt",
   },
   {
@@ -1341,11 +1465,13 @@ export const QUOTES = [
     author: "Kenneth Patton",
   },
   {
-    text: "A little knowledge that acts is worth infinitely more than much knowledge that is idle.",
+    text:
+      "A little knowledge that acts is worth infinitely more than much knowledge that is idle.",
     author: "Kahlil Gibran",
   },
   {
-    text: "If you get up one more time than you fall, you will make it through.",
+    text:
+      "If you get up one more time than you fall, you will make it through.",
     author: "Chinese Proverb",
   },
 ];

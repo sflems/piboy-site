@@ -5,7 +5,7 @@ import "./Project.css";
 
 export default function ProjectsIndex(props) {
   return (
-    <motion.main layoutId="projectIndex" className="m-0 p-0 text-center">
+    <motion.main layoutId="projectIndex" className="m-0 p-0 pb-2 text-center">
       <motion.section
         variants={variants.pages}
         initial="hidden"
@@ -17,14 +17,25 @@ export default function ProjectsIndex(props) {
           (props.className ? props.className : "")
         }
       >
+        <motion.h1
+          className=""
+          variants={variants.writerTwo.letterTwo}
+          animate={{
+            ...variants.writerTwo.letterTwo.visible,
+            transition: { duration: 0.2, delay: 0.2 },
+          }}
+          initial="hidden"
+        >
+          Piboy Projects
+        </motion.h1>
         <motion.div
           variants={container}
           initial="hidden"
           animate="visible"
-          className="row row-cols-1 m-0 p-3 text-start"
+          className="row row-cols-1 m-0 p-3 text-center"
         >
           <motion.ul layout variants={variants.containers} className="">
-            {PROJECTS.map(({ id, name, slug, source, ghUrl, element }) => {
+            {PROJECTS.map(({ id, name, slug, category, ghUrl, element }) => {
               return (
                 <motion.li
                   className="nav-item"
@@ -37,7 +48,7 @@ export default function ProjectsIndex(props) {
                       className="link-success"
                       variants={variants.buttons}
                       animate="visible"
-                      whileHover="hoverProjButton"
+                      whileHover="hoverTopButton"
                       whileTap="tap"
                     >
                       {name}

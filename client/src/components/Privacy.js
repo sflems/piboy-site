@@ -1,26 +1,9 @@
 import { motion } from "framer-motion";
 import { variants } from "../Constants";
 
-const container = {
-  hidden: {
-    opacity: 0,
-    height: "100%",
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-      ease: "easeInOut",
-      type: "spring",
-      stiffness: 100,
-      damping: 30,
-    },
-  },
-};
-
 const Privacy = ({ setModalToggled }, props) => {
   return (
-    <motion.main layoutID="privacy" className="m-0 p-0 text-center">
+    <motion.main layoutId="privacy" className="m-0 p-0 text-center">
       <motion.section
         variants={variants.pages}
         initial="hidden"
@@ -33,7 +16,7 @@ const Privacy = ({ setModalToggled }, props) => {
         }
       >
         <motion.div
-          variants={container}
+          variants={variants.containerTwo}
           initial="hidden"
           animate="visible"
           className="row row-cols-1 m-0 p-3 text-start position-relative"

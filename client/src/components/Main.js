@@ -13,23 +13,6 @@ import SocialIcon from "../media/icons/social";
 import SpiderIcon from "../media/icons/spider";
 import WordPressIcon from "../media/icons/wordpress";
 
-const container = {
-  hidden: {
-    opacity: 0,
-    height: "100%",
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-      ease: "easeInOut",
-      type: "spring",
-      stiffness: 100,
-      damping: 30,
-    },
-  },
-};
-
 const Main = ({id, setModalToggled}) => {
   var greeting = `Hello, my name's Scott. I'm the lead developer and graphic designer with Piboy Technical Solutions.`;
 
@@ -43,7 +26,7 @@ const Main = ({id, setModalToggled}) => {
     >
       {/* Hero Section */}
       <motion.section
-        variants={container}
+        variants={variants.containerMain}
         initial="hidden"
         animate="visible"
         exit="exit"
@@ -52,7 +35,7 @@ const Main = ({id, setModalToggled}) => {
       >
         <motion.div
           className="px-2 text-center text-white"
-          variants={container}
+          variants={variants.containerMain}
           initial="hidden"
           animate="visible"
         >
@@ -61,7 +44,7 @@ const Main = ({id, setModalToggled}) => {
             src={FullLogo}
             alt="Piboy Technical Solutions Ltd. Full Logo"
           ></img>
-          <motion.div variants={container} className="col-lg mx-auto">
+          <motion.div variants={variants.containerMain} className="col-lg mx-auto">
             <motion.p
               className="col lead px-lg-5 mb-4 mx-3"
               variants={variants.writer.sentence}
@@ -93,7 +76,7 @@ const Main = ({id, setModalToggled}) => {
             }}
             className="pt-4 overflow-hidden hero-img"
           >
-            <div className="container mb-lg-0 mb-sm-n5 mb-md-n5">
+            <div className="variants.containerMain mb-lg-0 mb-sm-n5 mb-md-n5">
               <motion.img
                 initial={{ y: 1000 }}
                 animate={{
@@ -121,13 +104,13 @@ const Main = ({id, setModalToggled}) => {
       {/* Card Section */}
 
       <motion.section
-        variants={container}
+        variants={variants.containerMain}
         initial="hidden"
         animate="visible"
         exit="exit"
         className="row flex-md-row align-items-center bg-primary g-5 p-2 p-md-4 m-0 border-top section-border border-info card shadow"
       >
-        <motion.div variants={container} className="col-auto m-0 p-0 px-md-3">
+        <motion.div variants={variants.containerMain} className="col-auto m-0 p-0 px-md-3">
           <Card
             className="glass"
             title="Website Development &amp; Hosting"
@@ -164,11 +147,11 @@ const Main = ({id, setModalToggled}) => {
       {/* Call to Action Section */}
 
       <motion.section
-        variants={container}
+        variants={variants.containerMain}
         className="row flex-md-row-reverse align-items-center bg-primary g-5 py-3 mx-0 my-0"
       >
         <motion.div
-          variants={container}
+          variants={variants.containerMain}
           className="col-10 col-sm-8 col-md-6 px-0 pb-4"
         >
           <motion.img
@@ -192,7 +175,7 @@ const Main = ({id, setModalToggled}) => {
             height="500"
           />
         </motion.div>
-        <motion.div variants={container} className="col-md-6">
+        <motion.div variants={variants.containerMain} className="col-md-6">
           <h1 className="display-5 fw-bold lh-1 mb-3">
             Simple, passionate experience.
           </h1>

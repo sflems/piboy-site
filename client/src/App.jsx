@@ -55,6 +55,11 @@ function App() {
               path: "/projects/:slug",
               element: <Project />,
               name: "Projects"
+            },
+            {
+              path: "/projects/*",
+              element: <ProjectsIndex notFound={true}/>,
+              name: "Not Found"
             }
           ]
         },

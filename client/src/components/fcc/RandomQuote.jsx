@@ -7,7 +7,12 @@ export default function RandomQuote() {
   const [qod, setQod] = useState(QUOTES[randomIndex()]);
 
   return (
-    <>
+    <motion.div
+      variants={variants.pages}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <motion.p
         className="col p-3 my-auto text-center lead"
         variants={variants.container}
@@ -39,7 +44,7 @@ export default function RandomQuote() {
             encodeURI('"' + qod.text + '"\n- ' + qod.author)
           }
           target="_blank"
-          rel='noopener noreferrer'
+          rel="noopener noreferrer"
         >
           <motion.button
             variants={variants.buttons}
@@ -56,6 +61,6 @@ export default function RandomQuote() {
           </motion.button>
         </a>
       </div>
-    </>
+    </motion.div>
   );
 }

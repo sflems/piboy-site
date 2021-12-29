@@ -6,27 +6,26 @@ import Footer from "./Footer.js";
 import NavBar from "./NavBar.js";
 import ContactModal from "./ContactModal.js";
 
-export default function Layout({modalToggled, setModalToggled}) {
-    return (
-      <AnimateSharedLayout type="crossfade">
-        {modalToggled && <ContactModal setModalToggled={setModalToggled} />}
+export default function Layout({ modalToggled, setModalToggled }) {
+  return (
+    <AnimateSharedLayout type="crossfade">
+      {modalToggled && <ContactModal setModalToggled={setModalToggled} />}
+
+      <AnimatePresence layout initial={variants.pages.hidden} exitBeforeEnter>
         <motion.div
-            variants={variants.containers}
-            initial={false}
-            animate="visible"
-            id="contentWrapper"
-            className="bg-primary m-0 p-0"
+          variants={variants.containers}
+          layout
+          initial={false}
+          animate="visible"
+          id="contentWrapper"
+          className="bg-primary m-0 p-0"
         >
-            <NavBar setModalToggled={setModalToggled} />
-            <AnimatePresence
-            layout
-            initial={variants.pages.hidden}
-            exitBeforeEnter
-            >
-            <Outlet/>
-            </AnimatePresence>
+          <NavBar setModalToggled={setModalToggled} />
+
+          <Outlet />
         </motion.div>
-        <Footer />
-        </AnimateSharedLayout>
-    )
-  };
+      </AnimatePresence>
+      <Footer />
+    </AnimateSharedLayout>
+  );
+}
