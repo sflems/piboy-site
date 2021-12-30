@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { variants } from "../../Constants";
+import DOMPurify from 'dompurify';
 import { motion } from "framer-motion";
-import "./MarkdownPreviewer.css";
 import { markdown } from "./markdown_sample.js";
 import { parse } from "marked";
-import DOMPurify from 'dompurify';
+import { variants } from "../../Constants";
+import "./MarkdownPreviewer.css";
 
 export default function MarkdownPreviewer() {
   const [inputText, setInputText] = useState(markdown.text);
@@ -14,17 +14,18 @@ export default function MarkdownPreviewer() {
     setOutputText(DOMPurify.sanitize(parse(inputText)));
   }, [inputText]);
 
-  useEffect(() => {
-    const tests = document.createElement("script");
-    tests.src =
-      "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js";
-    tests.async = true;
-    tests.id = "test-suite";
-    document.body.appendChild(tests);
-    return () => {
-      document.body.removeChild(tests);
-    };
-  }, []);
+  // FCC Test Suit CDN Script
+  // useEffect(() => {
+  //   const tests = document.createElement("script");
+  //   tests.src =
+  //     "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js";
+  //   tests.async = true;
+  //   tests.id = "test-suite";
+  //   document.body.appendChild(tests);
+  //   return () => {
+  //     document.body.removeChild(tests);
+  //   };
+  // }, []);
 
   return (
     <motion.div
