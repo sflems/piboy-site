@@ -43,23 +43,6 @@ export const PROJECTS = [
   },
 ];
 
-export const container = {
-  hidden: {
-    opacity: 0,
-    height: "100%",
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-      ease: "easeInOut",
-      type: "spring",
-      stiffness: 100,
-      damping: 30,
-    },
-  },
-};
-
 export const variants = {
   pages: {
     hidden: {

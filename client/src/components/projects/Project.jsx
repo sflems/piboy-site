@@ -21,13 +21,14 @@ export default function Projects(props) {
           setProjectData(null);
           console.log("Fetch found no more info.");
         });
+    } else {
+      setProjectData(null);
     }
   }, [project, slug]);
 
   return (
     <motion.main className="m-0 p-0 text-center">
       <motion.section
-        layout
         variants={variants.pages}
         initial="hidden"
         animate="visible"

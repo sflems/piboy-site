@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { container, PROJECTS, variants } from "../../Constants";
+import { PROJECTS, variants } from "../../Constants";
 import { Outlet, Link } from "react-router-dom";
 import "./Project.css";
 
 export default function ProjectsIndex(props) {
   return (
-    <motion.main layoutId="projectIndex" className="m-0 p-0 pb-2 text-center">
+    <motion.main className="m-0 p-0 pb-2 text-center">
       <motion.section
         variants={variants.pages}
         initial="hidden"
@@ -29,17 +29,16 @@ export default function ProjectsIndex(props) {
           Piboy Projects
         </motion.h1>
         <motion.div
-          variants={container}
+          variants={variants.containerMain}
           initial="hidden"
           animate="visible"
           className="row row-cols-1 m-0 p-3 text-center"
         >
-          <motion.ul layout variants={variants.containers} className="">
+          <motion.ul variants={variants.containers} className="">
             {PROJECTS.map(({ id, name, slug, category, ghUrl, element }) => {
               return (
                 <motion.li
                   className="nav-item"
-                  layout
                   variants={variants.containers}
                   key={id}
                 >
