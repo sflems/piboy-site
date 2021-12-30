@@ -1,19 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { variants } from "../../Constants";
 import { motion } from "framer-motion";
 import "./MarkdownPreviewer.css";
+import { parse } from "marked";
+import sanitizeHtml from 'sanitize-html';
 
 export default function MarkdownPreviewer() {
-  const [inputText, setInputText] = useState(null);
-  const [ouput, setOutput] = useState(null);
+  const [inputText, setInputText] = useState("");
+  const [outputText, setOutputText] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(inputText);
-    // Convert inputText to markdown here.
-
-  };
-
+  useEffect(() => {
+    setOutputText(sanitizeHtml(parse(inputText)));
+  }, [inputText]);
+  
   return (
     <motion.div
       variants={variants.pages}
@@ -23,9 +22,10 @@ export default function MarkdownPreviewer() {
     >
       <motion.p
         className="col p-3 my-auto text-center lead"
-        variants={variants.container}
+        variants={variants.containers}
       >
-        Enter markdown text to be converted:
+        Enter markdown text to be converted:<br/>
+        <small>(Output can be seen below input box.)</small>
       </motion.p>
       <div
         className="input-group mb-4"
@@ -35,31 +35,13 @@ export default function MarkdownPreviewer() {
       >
         <textarea id="editor" className="form-control input" aria-label="Markdown text entry area"/>
       </div>
-
-      <div className="d-grid gap-2 d-md-flex pb-2 justify-content-center">
-        <div>
-          <motion.button
-            variants={variants.buttons}
-            initial="visible"
-            animate="visible"
-            whileHover="hoverTopButton"
-            whileTap="tap"
-            type="button"
-            className="btn btn-info text-white btn-lg px-4 rounded-0 shadow"
-            id="new-quote"
-            onClick={handleSubmit}
-          >
-            Preview
-          </motion.button>
-        </div>
-      </div>
-      <motion.pre
+      <div
         id="preview"
         className="col p-3 my-auto text-left"
-        variants={variants.container}
+        variants={variants.containers}
+        dangerouslySetInnerHTML={{__html:outputText}}
       >
-        {inputText && inputText}
-      </motion.pre>
+      </div>
     </motion.div>
   );
 }
