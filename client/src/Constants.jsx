@@ -1,4 +1,5 @@
 import RandomQuote from "./components/fcc/RandomQuote";
+import MarkdownPreviewer from "./components/fcc/MarkdownPreviewer";
 
 export const baseGhUrl = "https://api.github.com/";
 
@@ -28,7 +29,7 @@ export const PROJECTS = [
     slug: "markdown-previewer",
     category: "Free Code Camp",
     ghUrl: null,
-    element: null,
+    element: <MarkdownPreviewer />,
     fetch: false,
   },
   {

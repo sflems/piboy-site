@@ -26,7 +26,7 @@ export default function ProjectsIndex(props) {
           }}
           initial="hidden"
         >
-          Piboy Projects
+          Piboy's Projects
         </motion.h1>
         <motion.div
           variants={variants.containerMain}

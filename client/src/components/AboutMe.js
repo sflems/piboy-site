@@ -1,5 +1,5 @@
 import { motion, useCycle } from "framer-motion";
-import { container, variants, SERVICES } from "../Constants";
+import { variants, SERVICES } from "../Constants";
 import "./AboutMe.css";
 import bgSVG from "../media/HillsandMountains-sunset.svg";
 
@@ -19,7 +19,7 @@ const AboutMe = (props) => {
         }
       >
         <motion.div
-          variants={container}
+          variants={variants.container}
           initial="hidden"
           animate="visible"
           className="row row-cols-1 m-0 p-3 text-start"
@@ -37,7 +37,7 @@ const AboutMe = (props) => {
           </motion.h1>
           <motion.p
             className="col p-3 my-auto text-start lead"
-            variants={container}
+            variants={variants.container}
           >
             Founded in 2019, and based out of <span>Campbell River, BC,</span>{" "}
             the Piboy team has been developing application &amp; web solutions
@@ -46,7 +46,7 @@ const AboutMe = (props) => {
           <motion.div
             id="wwd"
             className="col p-3 d-flex align-items-center justify-content-center"
-            variants={container}
+            variants={variants.container}
           >
             <motion.p
               key={wwd}
@@ -71,7 +71,7 @@ const AboutMe = (props) => {
             </motion.p>
           </motion.div>
           <motion.section
-            variants={container}
+            variants={variants.container}
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -96,7 +96,7 @@ const AboutMe = (props) => {
           </motion.section>
           <motion.div
             className="col p-3 my-auto text-start"
-            variants={container}
+            variants={variants.container}
           >
             <motion.p
               className="text-start lead text-success"
@@ -126,7 +126,7 @@ const AboutMe = (props) => {
                   );
                 })}
             </motion.p>
-            <motion.p className="text-start lead" variants={container}>
+            <motion.p className="text-start lead" variants={variants.container}>
               Through understanding our customers' business and technical needs,
               we can work together to further their endeavors and enhance user
               experience.
