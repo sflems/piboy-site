@@ -35,12 +35,12 @@ export default function Projects(props) {
         exit="exit"
         id="projects-index"
         className={
-          "container-lg text-white text-center m-auto p-3" +
+          "container-lg text-white text-center m-auto p-3 pt-0" +
           (props.className ? props.className : "")
         }
       >
         <motion.h1
-          className=""
+          className="mt-0"
           variants={variants.writerTwo.letterTwo}
           animate={{
             ...variants.writerTwo.letterTwo.visible,

@@ -2,17 +2,30 @@ import React, { useEffect, useState } from "react";
 import { variants } from "../../Constants";
 import { motion } from "framer-motion";
 import "./MarkdownPreviewer.css";
+import { markdown } from "./markdown_sample.js";
 import { parse } from "marked";
-import sanitizeHtml from 'sanitize-html';
+import DOMPurify from 'dompurify';
 
 export default function MarkdownPreviewer() {
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState(markdown.text);
   const [outputText, setOutputText] = useState("");
 
   useEffect(() => {
-    setOutputText(sanitizeHtml(parse(inputText)));
+    setOutputText(DOMPurify.sanitize(parse(inputText)));
   }, [inputText]);
-  
+
+  useEffect(() => {
+    const tests = document.createElement("script");
+    tests.src =
+      "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js";
+    tests.async = true;
+    tests.id = "test-suite";
+    document.body.appendChild(tests);
+    return () => {
+      document.body.removeChild(tests);
+    };
+  }, []);
+
   return (
     <motion.div
       variants={variants.pages}
@@ -24,24 +37,25 @@ export default function MarkdownPreviewer() {
         className="col p-3 my-auto text-center lead"
         variants={variants.containers}
       >
-        Enter markdown text to be converted:<br/>
+        Enter markdown text to be converted:
+        <br />
         <small>(Output can be seen below input box.)</small>
       </motion.p>
-      <div
-        className="input-group mb-4"
-        type="textarea"
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-      >
-        <textarea id="editor" className="form-control input" aria-label="Markdown text entry area"/>
+      <div className="input-group mb-4" type="textarea">
+        <textarea
+          className="form-control input"
+          id="editor"
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          aria-label="Markdown text entry area"
+        />
       </div>
       <div
         id="preview"
-        className="col p-3 my-auto text-left"
+        className="col p-3 my-auto text-start"
         variants={variants.containers}
-        dangerouslySetInnerHTML={{__html:outputText}}
-      >
-      </div>
+        dangerouslySetInnerHTML={{ __html: outputText }}
+      ></div>
     </motion.div>
   );
 }

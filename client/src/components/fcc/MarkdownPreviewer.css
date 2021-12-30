@@ -1,3 +1,47 @@
 textarea.input {
     min-height: 70vh !important;
 }
+
+div#preview a  {
+    color: #add785;
+}
+
+div#preview code  {
+    color: #fac751;
+}
+
+div#preview blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 5px solid rgba(238, 238, 238, 0.6);
+}
+
+div#preview blockquote p {
+    margin-bottom: 0.5em;
+}
+
+div#preview ul > li {
+    list-style: initial;
+}
+
+div#preview table > tbody > tr > td, div#preview table > tbody > tr > th, div#preview table > tfoot > tr > td, div#preview table > tfoot > tr > th, div#preview table > thead > tr > td, div#preview table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+
+div#preview td, div#preview th {
+    padding: 0;
+}
+
+div#preview table {
+    margin-bottom: 2em;
+    border-collapse: collapse;
+}
+
+div#preview img, div#preview svg {
+    max-width: 85vw;
+    margin: 1em auto;
+}
