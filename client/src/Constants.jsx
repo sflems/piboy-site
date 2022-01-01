@@ -1,5 +1,6 @@
 import RandomQuote from "./components/fcc/RandomQuote";
 import MarkdownPreviewer from "./components/fcc/MarkdownPreviewer";
+import DrumMachine from "./components/fcc/DrumMachine";
 
 export const baseGhUrl = "https://api.github.com/";
 
@@ -28,8 +29,17 @@ export const PROJECTS = [
     name: "Markdown Previewer",
     slug: "markdown-previewer",
     category: "Free Code Camp",
-    ghUrl: null,
+    ghUrl: "https://github.com/sflems/piboy-site/blob/update-deps%2Brouter/client/src/components/fcc/MarkdownPreviewer.jsx",
     element: <MarkdownPreviewer />,
+    fetch: false,
+  },
+  {
+    id: 3,
+    name: "Drum Machine",
+    slug: "drum-machine",
+    category: "Free Code Camp",
+    ghUrl: "https://github.com/sflems/piboy-site/blob/update-deps%2Brouter/client/src/components/fcc/DrumMachine.jsx",
+    element: <DrumMachine />,
     fetch: false,
   },
   {
