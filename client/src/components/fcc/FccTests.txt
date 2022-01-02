@@ -1,0 +1,12 @@
+  // React useEffect for FCC Test Suit CDN Script
+  useEffect(() => {
+    const tests = document.createElement("script");
+    tests.src =
+      "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js";
+    tests.async = true;
+    tests.id = "test-suite";
+    document.body.appendChild(tests);
+    return () => {
+      document.body.removeChild(tests);
+    };
+  }, []);

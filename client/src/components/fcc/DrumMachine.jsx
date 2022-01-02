@@ -85,19 +85,6 @@ const mediaUrls = [
 const inputArray = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
 
 export default function DrumMachine() {
-  // FCC Test Suit CDN Script
-  // useEffect(() => {
-  //   const tests = document.createElement("script");
-  //   tests.src =
-  //     "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js";
-  //   tests.async = true;
-  //   tests.id = "test-suite";
-  //   document.body.appendChild(tests);
-  //   return () => {
-  //     document.body.removeChild(tests);
-  //   };
-  // }, []);
-
   const [playing, setPlaying] = useState("");
   const [activeBank, setActiveBank] = useState(0);
 
@@ -115,7 +102,7 @@ export default function DrumMachine() {
 
   const handleKeyDown = (keyId) => {
     if (inputArray.indexOf(keyId) > -1) {
-      document.getElementById(keyId).click();
+      document.querySelector(`[data-key-id=${keyId}]`).click();
     }
   };
 
@@ -137,18 +124,20 @@ export default function DrumMachine() {
     >
       <motion.div className="row m-0 mb-4" variants={variants.containers}>
         <div className="col-2 m-0"></div>
-        <div className="col-8 m-0 p-1 display">{playing}</div>
+        <div id="display" className="col-8 m-0 p-1 display">
+          {playing}
+        </div>
         <div className="col-2 m-0"></div>
       </motion.div>
       <PadContainer activeBank={activeBank} handlePlay={handlePlay} />
       <motion.div className="row row-cols-3" variants={variants.containers}>
         <div className="my-2 col">
-          <button className="drum-pad" onClick={() => setActiveBank(0)}>
+          <button className="drum-pad2" onClick={() => setActiveBank(0)}>
             Bank 1
           </button>
         </div>
         <div className="my-2 col">
-          <button className="drum-pad" onClick={() => setActiveBank(1)}>
+          <button className="drum-pad2" onClick={() => setActiveBank(1)}>
             Bank 2
           </button>
         </div>
@@ -163,7 +152,7 @@ export default function DrumMachine() {
 }
 
 const PadContainer = ({ activeBank, handlePlay }) => {
-  const mediaStates = mediaUrls[activeBank].map((mp3, index) => {
+  let mediaStates = mediaUrls[activeBank].map((mp3, index) => {
     return {
       keyId: inputArray[index],
       name: mp3.name,
@@ -172,22 +161,23 @@ const PadContainer = ({ activeBank, handlePlay }) => {
   });
 
   return (
-    <motion.div
-      id="drumpad-container"
-      className="row row-cols-3"
-      variants={variants.containers}
-    >
+    <motion.div className="row row-cols-3" variants={variants.containers}>
       {mediaStates.map((mp3) => {
         return (
-          <div key={mp3.keyId} className="my-2 col">
+          <div
+            id={mp3.name}
+            key={mp3.keyId + "-container"}
+            className="my-2 col"
+          >
             <button
-              id={mp3.keyId}
+              id={mp3.name + "-btn"}
               data-name={mp3.name}
+              data-key-id={mp3.keyId}
               onClick={(event) => handlePlay(event.target)}
-              className="drum-pad h5"
+              className="drum-pad h6"
             >
               {mp3.keyId}
-              <audio className="clip" id={mp3.keyId + "-audio"} src={mp3.url}>
+              <audio className="clip" id={mp3.keyId} src={mp3.url}>
                 Your browser does not support the
                 <code>audio</code> element.
               </audio>
